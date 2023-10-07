@@ -1,4 +1,4 @@
-package Lab2;
+package Lab1;
 
 public class Team {
     private String name;
