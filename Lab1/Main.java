@@ -3,21 +3,22 @@ package Lab1;
 public class Main {
     public static void main(String[] args) {
 
-        Country argentina = new Country("Argentina");
-        Country portugal = new Country("Portugal");
-        Country espanya = new Country("Espanya");
+        Country c1 = new Country("Argentina");
+        Country c2 = new Country("Portugal");
+        Country c3 = new Country("Espanya");
 
 
-        Player player1 = new Player(0, "Leo Messi", 36, argentina);
-        Player player2 = new Player(0, "Cristiano Ronaldo", 38, portugal);
+        Player p1 = new Player(0, "Leo Messi", 36, c1);
+        Player p2 = new Player(0, "Cristiano Ronaldo", 38, c2);
 
-        player1.update(120, 13000, 4000, 362, 819);
-        player2.update(200, 7500, 4500, 289, 855);
+        
+        p1.update(120, 13000, 4000, 362, 819);
+        p2.update(200, 7500, 4500, 289, 855);
 
-        player1.printStats();
-        player2.printStats();
+        p1.printStats();
+        p2.printStats();
 
-        Team team = new Team("Barça", espanya, 0);
+        Team team = new Team("Barça", c3, 0);
     }
 }
 

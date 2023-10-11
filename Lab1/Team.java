@@ -1,10 +1,12 @@
 package Lab1;
+import java.util.*;
 
 public class Team {
     private String name;
     private Country country;
-    private int gender;
-    private Player[] players;
+    private LinkedList <Player> playersList;
+    public enum GENDER {MALE, FEMALE, MIXED};
+    private GENDER gender;
     private int numMatches;
     private int numWins;
     private int numTies;
@@ -12,17 +14,11 @@ public class Team {
     private int numGoalsScored;
     private int numGoalsAgainst;
 
-    public Team(String name, Country country, int gender) {
+    public Team(String name, Country country, GENDER gender) {
         this.name = name;
         this.country = country;
         this.gender = gender;
-        this.players = new Player[11];  // Assumim que l'equip té 11 jugadors
-        this.numMatches = 0;
-        this.numWins = 0;
-        this.numTies = 0;
-        this.numLosses = 0;
-        this.numGoalsScored = 0;
-        this.numGoalsAgainst = 0;
+        LinkedList <Player> playersList = new LinkedList <Player> ();
     }
 
     public String getName() {
@@ -33,16 +29,22 @@ public class Team {
         return country;
     }
 
-    public int getGender() {
+    public GENDER getGender() {
         return gender;
     }
 
     public void addPlayer(Player p) {
-        // Afegir un jugador a l'equip
+        GENDER aux = p.getGender();
+        if (aux==this.gender){
+            playersList.add(p);
+        } else {
+            System.out.println();
+        }
+    
     }
 
     public void removePlayer(Player p) {
-        // Eliminar un jugador de l'equip
+        playersList.remove(p);
     }
 
     public void playMatch(int scored, int against) {        // revisar si està bé
