@@ -44,14 +44,29 @@ public class Team {
 
         if (this.gender == GENDER.MIXED){
             playerList.add(p);
-        }
+            if (p.getGender() == true){
+                System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
+            } else{
+                System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
 
-        if (gen_equip == p.getGender()){
-            this.playerList.add(p);            
-            System.out.println("S'ha assignat el jugador " + p.getName() + " al equip " + this.name);
-        } else {
-            System.out.println("El jugador" + p.getName() +  "no se'l pot assignar per raon de genere");
-        }
+            }
+
+        }   else if (gen_equip == p.getGender()){
+                this.playerList.add(p);            
+                if (p.getGender() == true){
+                    System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
+                } else{
+                    System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
+
+                }
+            } else {
+                if (p.getGender() == true){
+                    System.out.println("- La jugadora " + p.getName() +  " no se la pot assignar per raons de gènere al equip " + this.name +".");
+                } else{
+                    System.out.println("- El jugador " + p.getName() +  " no se'l pot assignar per raons de gènere al equip " + this.name + ".");
+                }
+            }
+        System.out.println("");
     }
 
     public void removePlayer(Player p) {
@@ -87,5 +102,16 @@ public class Team {
         System.out.println("Total gols encajados: " + numGoalsAgainst);
     }
 
+    public void printTeam(){
+        System.out.println("________________");
+        System.out.println("|"+name);
+        System.out.println("|---------------");
 
+        for (int i = 0; i < playerList.size(); i++) {
+            Player player = playerList.get(i);
+            System.out.println("|-"+player.getName());
+        }
+        System.out.println("----------------");
+
+    }
 }

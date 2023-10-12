@@ -66,7 +66,4 @@ public class Player {
         System.out.println("|_____________________________________________");
         System.out.println("");
     }
-    
-    
-
 }
