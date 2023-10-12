@@ -4,7 +4,6 @@ import java.util.*;
 public class Team {
     private String name;
     private Country country;
-    private LinkedList <Player> playersList;
     public enum GENDER {MALE, FEMALE, MIXED};
     private GENDER gender;
     private int numMatches;
@@ -13,12 +12,14 @@ public class Team {
     private int numLosses;
     private int numGoalsScored;
     private int numGoalsAgainst;
+    private LinkedList<Player> playerList;
+
 
     public Team(String name, Country country, GENDER gender) {
         this.name = name;
         this.country = country;
         this.gender = gender;
-        LinkedList <Player> playersList = new LinkedList <Player> ();
+        playerList = new LinkedList <Player>();
     }
 
     public String getName() {
@@ -34,17 +35,27 @@ public class Team {
     }
 
     public void addPlayer(Player p) {
-        GENDER aux = p.getGender();
-        if (aux==this.gender){
-            playersList.add(p);
-        } else {
-            System.out.println();
+        boolean gen_equip;
+        if (this.gender == GENDER.FEMALE){
+            gen_equip = true;
+        }   else    {
+            gen_equip = false;
         }
-    
+
+        if (this.gender == GENDER.MIXED){
+            playerList.add(p);
+        }
+
+        if (gen_equip == p.getGender()){
+            this.playerList.add(p);            
+            System.out.println("S'ha assignat el jugador " + p.getName() + " al equip " + this.name);
+        } else {
+            System.out.println("El jugador" + p.getName() +  "no se'l pot assignar per raon de genere");
+        }
     }
 
     public void removePlayer(Player p) {
-        playersList.remove(p);
+        playerList.remove(p);
     }
 
     public void playMatch(int scored, int against) {        // revisar si està bé
