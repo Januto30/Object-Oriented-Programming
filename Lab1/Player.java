@@ -49,12 +49,14 @@ public class Player {
         System.out.println("|PLAYER STATS");
         System.out.println("|_____________________________________________");
         System.out.println("| Nom:\t\t\t" + name);
+
         if (gender == false){
             System.out.println("| Genere:\t\t" + "Home");
         } else  {
             System.out.println("| Genere:\t\t" + "Dona");
 
         }
+        
         System.out.println("| Edat:\t\t\t" + age);
         System.out.println("| Nacionalitat:\t\t" + nacionality.getName());
         System.out.println("| Partits jugats:\t" + numMatches);

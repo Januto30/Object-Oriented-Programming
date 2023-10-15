@@ -42,29 +42,35 @@ public class Team {
             gen_equip = false;
         }
 
-        if (this.gender == GENDER.MIXED){
+        if (this.gender == GENDER.MIXED) {
             playerList.add(p);
-            if (p.getGender() == true){
-                System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
-            } else{
-                System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
 
+            if (p.getGender() == true) {
+                System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
+
+            } else {
+                System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
             }
 
-        }   else if (gen_equip == p.getGender()){
-                this.playerList.add(p);            
-                if (p.getGender() == true){
-                    System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
-                } else{
-                    System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
+        }   else if (gen_equip == p.getGender()) {
+                this.playerList.add(p);
 
+                if (p.getGender() == true) {
+                    System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
+
+                } else {
+                    System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
                 }
+
             } else {
-                if (p.getGender() == true){
+
+                if (p.getGender() == true) {
                     System.out.println("- La jugadora " + p.getName() +  " no se la pot assignar per raons de gènere al equip " + this.name +".");
-                } else{
+
+                } else {
                     System.out.println("- El jugador " + p.getName() +  " no se'l pot assignar per raons de gènere al equip " + this.name + ".");
                 }
+
             }
         System.out.println("");
     }
@@ -73,7 +79,7 @@ public class Team {
         playerList.remove(p);
     }
 
-    public void playMatch(int scored, int against) {        // revisar si està bé
+    public void playMatch(int scored, int against) {
         numMatches++;       
         numGoalsScored += scored;
         numGoalsAgainst += against;
@@ -102,7 +108,7 @@ public class Team {
         System.out.println("Total gols encajados: " + numGoalsAgainst);
     }
 
-    public void printTeam(){
+    public void printTeam() {
         System.out.println("________________");
         System.out.println("|"+name);
         System.out.println("|---------------");
