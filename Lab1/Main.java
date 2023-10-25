@@ -83,10 +83,3 @@ public class Main {
 
     }
 }
-
-
-// Coses a fer:
-//  - revisar que playMatch estigui bé
-//  - comprovar que printStats funciona
-
-//  - Fer sa 'documentació' 
