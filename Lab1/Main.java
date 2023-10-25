@@ -6,7 +6,7 @@ public class Main {
         Country c1 = new Country("Argentina");
         Country c2 = new Country("Portugal");
         Country c3 = new Country("Espanya");
-        Country c4 = new Country("EUUA");
+        Country c4 = new Country("USA");
         
 
         Player p1 = new Player(false, "Leo Messi", 36, c1);
@@ -21,8 +21,6 @@ public class Main {
         Player p10 = new Player(true, "Sam Kerr", 30, c4);
 
 
-
-        
         p1.update(120, 13000, 4000, 362, 819);
         p2.update(200, 7500, 4500, 289, 855);
         p3.update(14, 700, 4346, 534, 345);
@@ -37,6 +35,7 @@ public class Main {
         Team t3 = new Team("Boca Júniors", c1, Team.GENDER.MALE);
         Team t4 = new Team("RiverPlade", c1, Team.GENDER.FEMALE);
         Team t5 = new Team("Racing", c1, Team.GENDER.MIXED);
+
 
         System.out.println("__________BARÇA________________________________________");
         t1.addPlayer(p1);
