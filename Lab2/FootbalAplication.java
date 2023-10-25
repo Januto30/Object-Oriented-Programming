@@ -1,6 +1,6 @@
 package Lab2;
 
-public class Main {
+public class FootbalAplication {
     public static void main(String[] args) {
 
 
