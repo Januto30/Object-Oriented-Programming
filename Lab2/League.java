@@ -73,7 +73,7 @@ public class League {
             System.out.println("L'equip " + match.getHomeTeam().getName() +" ha fet " + match.getHomeGoals() + " gols.");
         }
     }
-    
+}
     /*
     public void printLeagueStandings() {
         System.out.println("Clasificació de la lliga:");
