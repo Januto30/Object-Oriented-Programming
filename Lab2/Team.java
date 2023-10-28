@@ -14,7 +14,6 @@ public class Team {
     private int numGoalsAgainst;
     private LinkedList<Player> playerList;
 
-
     public Team(String name, Country country, GENDER gender) {
         this.name = name;
         this.country = country;
@@ -22,9 +21,34 @@ public class Team {
         playerList = new LinkedList <Player>();
     }
 
+    public int getNumMatches() {
+        return numMatches;
+    }
+
+    public int getNumWins() {
+        return numWins;
+    }
+
+    public int getNumTies() {
+        return numTies;
+    }
+
+    public int getNumLosses() {
+        return numLosses;
+    }
+
+    public int getNumGoalsScored() {
+        return numGoalsScored;
+    }
+
+    public int getNumGoalsAgainst() {
+        return numGoalsAgainst;
+    }
+
     public String getName() {
         return name;
     }
+
 
     public Country getCountry() {
         return country;
@@ -114,4 +138,35 @@ public class Team {
         System.out.println("----------------");
 
     }
+
+    public void updateStats(Match match) {
+        this.numMatches++;
+
+        if (match.getHomeTeam() == this) {
+            this.numGoalsScored += match.getHomeGoals();
+            this.numGoalsAgainst += match.getAwayGoals();
+
+            if (match.getHomeGoals() > match.getAwayGoals()) {
+                this.numWins++;
+            } else if (match.getHomeGoals() < match.getAwayGoals()) {
+                this.numLosses++;
+            } else {
+                this.numTies++;
+            }
+
+        } else if (match.getAwayTeam() == this) {
+            this.numGoalsScored += match.getAwayGoals();
+            this.numGoalsAgainst += match.getHomeGoals();
+
+            if (match.getAwayGoals() > match.getHomeGoals()) {
+                this.numWins++;
+            } else if (match.getAwayGoals() < match.getHomeGoals()) {
+                this.numLosses++;
+            } else {
+                this.numTies++;
+            }
+        }
+    }
+
+
 }

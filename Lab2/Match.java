@@ -7,7 +7,7 @@ public class Match {
     private Team awayTeam;
     private int homeGoals;
     private int awayGoals;
-    private LinkedList<Player> homseScores;
+    private LinkedList<Player> homeScores;
     private LinkedList<Player> awayScores;
     
     public Team getHomeTeam() {
@@ -23,10 +23,18 @@ public class Match {
         return awayGoals;
     }
     public LinkedList<Player> getHomseScores() {
-        return homseScores;
+        return homeScores;
     }
     public LinkedList<Player> getAwayScores() {
         return awayScores;
+    }
+    public Match(Team homeTeam, Team awayTeam) {
+        this.homeTeam = homeTeam;
+        this.awayTeam = awayTeam;
+    }
+
+    public void simulateMatch(){
+
     }
 
 
