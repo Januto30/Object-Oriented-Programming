@@ -79,18 +79,14 @@ public class Match {
         }
         
         if (awayGoals == 0) {
-            System.out.println("");
+            System.out.println(" ");
 
         } else {
-            System.out.println("");
+            System.out.println(" ");
             System.out.println("Golejadors de l'equip visitant " + awayTeam.getName() + ":");
             for (Player scorer : awayScorers) {
                 System.out.println(" - " + scorer.getName());
             }
         }
     }
-
-
-
-    
 }

@@ -119,7 +119,7 @@ public class FootbalAplication {
         laLiga.generateMatches();
         laLiga.simulateMatches();
         laLiga.printMatches();
-        laLiga.printLeagueStandings();
+        laLiga.printLeagueClasification();
 
         barcelona.printStats();
         realMadrid.printStats();

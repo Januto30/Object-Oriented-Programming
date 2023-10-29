@@ -64,8 +64,6 @@ public class League {
         } else {
             teamList.add(team);
         }
-
-
     }
 
 
@@ -104,7 +102,7 @@ public class League {
         }
     }
 
-    public void printLeagueStandings() {
+    public void printLeagueClasification() {
         System.out.println(" ");
         System.out.println("Classificació de la lliga:");
         System.out.println("Equip\t\t   Jugats\t Guanyats\t Empatats\t  Perduts");

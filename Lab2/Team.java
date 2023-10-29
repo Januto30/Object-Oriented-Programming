@@ -73,18 +73,18 @@ public class Team {
         if (this.gender == GENDER.MIXED) {
             playerList.add(p);
             if (p.getGender() == true) {
-                // System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
+                System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
             } else {
-                // System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
+                System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
 
             }
 
         }   else if (gen_equip == p.getGender()) {
                 this.playerList.add(p);            
                 if (p.getGender() == true) {
-                    // System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
+                    System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
                 } else {
-                    // System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
+                    System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
 
                 }
             } else {
@@ -193,6 +193,4 @@ public class Team {
             }
         }
     }
-
-
 }
