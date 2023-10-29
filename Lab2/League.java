@@ -39,7 +39,33 @@ public class League {
 
 
     public void addTeam(Team team) {
-        teamList.add(team);
+        boolean validTeam = true;
+
+        if (this.gender == GENDER.MIXED) {
+            validTeam = true;
+
+        } else if (this.gender == GENDER.FEMALE && team.getGender() == Team.GENDER.FEMALE) {
+            validTeam = true;
+
+        } else if (this.gender == GENDER.MALE && team.getGender() == Team.GENDER.MALE) {
+            validTeam = true;
+
+        } else {
+            validTeam = false;
+        }
+
+        if (team.getCountry() != this.country) {
+            validTeam = false;
+        }
+
+        if (validTeam == false) {
+            System.out.println("-> L'equip " + team.getName() + " no pot ser afegit a aquesta lliga perque no concorden els generes o la nacionalitat.");
+
+        } else {
+            teamList.add(team);
+        }
+
+
     }
 
 
@@ -73,44 +99,17 @@ public class League {
     public void printMatches() {
         for (Match match : matchList) {
             System.out.println(" ");
-            System.out.println("En el partit entre " + match.getHomeTeam().getName() + " i " + match.getAwayTeam().getName());
-            System.out.println("L'equip " + match.getHomeTeam().getName() +" ha fet " + match.getHomeGoals() + " gols.");
-            System.out.println("L'equip " + match.getAwayTeam().getName() +" ha fet " + match.getAwayGoals() + " gols.");
+            match.printMatch();
             System.out.println(" ");
         }
     }
-
-    /*
-    public void printLeagueMatches() {
-        for (Team team : teamList) {
-            System.out.println("Partits del " + team.getName() + ":");
-            
-            System.out.println("- Com LOCAL:");
-            for (Match match : matchList) {
-                if (match.getHomeTeam() == team) {
-                    System.out.println("\t" + match.getAwayTeam().getName());
-                }
-            }
-
-            System.out.println("- Com VISITANT:");
-                for (Match match : matchList) {
-                    if (match.getAwayTeam() == team) {
-                        System.out.println("\t" + match.getHomeTeam().getName());
-                    }
-                }
-            
-                System.out.println();
-        }
-    }
-    */
-
 
     public void printLeagueStandings() {
         System.out.println(" ");
         System.out.println("Classificació de la lliga:");
         System.out.println("Equip\t\t   Jugats\t Guanyats\t Empatats\t  Perduts");
 
-        // Ordenar la lista de equipos según el número de partidos ganados de forma descendente usando el algoritmo de ordenación de burbuja
+        // Ordenar la llista d'equips segons el número de partitss guanyats de forma descendent usant l'algoritme d'ordenació' de bombolla
         for (int i = 0; i < teamList.size() - 1; i++) {
             for (int j = 0; j < teamList.size() - i - 1; j++) {
                 if (teamList.get(j).getNumWins() < teamList.get(j + 1).getNumWins()) {
@@ -127,8 +126,3 @@ public class League {
         }
     }
 }
-
-
-/*Per fer allo de quins jugadors fan quins gols necessito primer l'algoritme del pau
- * per saber quants gols a cada un així després poder-ho repartir entre els jugadors
-*/

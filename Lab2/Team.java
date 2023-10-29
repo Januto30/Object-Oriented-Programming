@@ -62,7 +62,6 @@ public class Team {
     }
 
 
-
     public void addPlayer(Player p) {
         boolean gen_equip;
         if (this.gender == GENDER.FEMALE) {
@@ -90,9 +89,9 @@ public class Team {
                 }
             } else {
                 if (p.getGender() == true) {
-                    // System.out.println("- La jugadora " + p.getName() +  " no se la pot assignar per raons de gènere al equip " + this.name +".");
+                    System.out.println("-> La jugadora " + p.getName() +  " no se la pot assignar per raons de gènere al equip " + this.name +".");
                 } else {
-                    // System.out.println("- El jugador " + p.getName() +  " no se'l pot assignar per raons de gènere al equip " + this.name + ".");
+                    System.out.println("-> El jugador " + p.getName() +  " no se'l pot assignar per raons de gènere al equip " + this.name + ".");
                 }
             }
         System.out.println("");
@@ -102,7 +101,7 @@ public class Team {
         playerList.remove(p);
     }
 
-    public void playMatch(int scored, int against) {        // revisar si està bé
+    public void playMatch(int scored, int against) {
         numMatches++;       
         numGoalsScored += scored;
         numGoalsAgainst += against;
@@ -126,10 +125,10 @@ public class Team {
         System.out.println("Genere: " + gender);
         System.out.println("Total partits jugats: " + numMatches);
         System.out.println("Total partits guanyats: " + numWins);
-        System.out.println("Total psrtits empatats: " + numTies);
+        System.out.println("Total partits empatats: " + numTies);
         System.out.println("Total partits perduts: " + numLosses);
         System.out.println("Total gols marcats: " + numGoalsScored);
-        System.out.println("Total gols encajados: " + numGoalsAgainst);
+        System.out.println("Total gols encaixats: " + numGoalsAgainst);
         System.out.println(" ");
     }
 
@@ -161,6 +160,16 @@ public class Team {
                 this.numTies++;
             }
 
+            for (Player player : playerList) {
+                int goalsScored = 0;
+                for (Player scorer : match.getHomeScorers()) {
+                    if (scorer == player) {
+                        goalsScored++;
+                    }
+                }
+                player.update(0, 0, 0, 0, goalsScored); 
+            }
+
         } else if (match.getAwayTeam() == this) {
             this.numGoalsScored += match.getAwayGoals();
             this.numGoalsAgainst += match.getHomeGoals();
@@ -171,6 +180,16 @@ public class Team {
                 this.numLosses++;
             } else {
                 this.numTies++;
+            }
+
+            for (Player player : playerList) {
+                int goalsScored = 0;
+                for (Player scorer : match.getAwayScorers()) {
+                    if (scorer == player) {
+                        goalsScored++;
+                    }
+                }
+                player.update(0, 0, 0, 0, goalsScored); 
             }
         }
     }

@@ -28,11 +28,11 @@ public class Match {
         return awayGoals;
     }
 
-    public LinkedList<Player> getHomseScores() {
+    public LinkedList<Player> getHomeScorers() {
         return homeScorers;
     }
 
-    public LinkedList<Player> getAwayScores() {
+    public LinkedList<Player> getAwayScorers() {
         return awayScorers;
     }
 
@@ -64,16 +64,29 @@ public class Match {
     }
 
     public void printMatch() {
-        System.out.println("Resultat del partit es:" + homeTeam.getName() + homeGoals + " - " + awayTeam.getName() + awayGoals);
+        System.out.println(homeTeam.getName() + " " + homeGoals + "  vs  " + awayTeam.getName() + " " +  awayGoals);
         
-        System.out.println("Golejadors de l'equip local" + homeTeam.getName() + ":");
-        for (Player scorer : homeScorers) {
-            System.out.println(scorer.getName());
+        if (homeGoals == 0) {
+            System.out.println("");
+
+        } else {
+            System.out.println("");
+            System.out.println("Golejadors de l'equip local " + homeTeam.getName() + ":");
+            for (Player scorer : homeScorers) {
+                System.out.println(" - " + scorer.getName());
+            }
+
         }
         
-        System.out.println("Golejadors de l'equip visitant" + awayTeam.getName() + ":");
-        for (Player scorer : awayScorers) {
-            System.out.println(scorer.getName());
+        if (awayGoals == 0) {
+            System.out.println("");
+
+        } else {
+            System.out.println("");
+            System.out.println("Golejadors de l'equip visitant " + awayTeam.getName() + ":");
+            for (Player scorer : awayScorers) {
+                System.out.println(" - " + scorer.getName());
+            }
         }
     }
 

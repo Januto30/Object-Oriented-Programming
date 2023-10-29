@@ -13,9 +13,6 @@ public class FootbalAplication {
         Country portugal = new Country("Portugal");
         Country germany = new Country("Alemanya");
 
-        Team.GENDER males = Team.GENDER.MALE;
-        League.GENDER male = League.GENDER.MALE;
-
         // JUGADORS:
         Player player1 = new Player(false, "Lionel Messi", 36, argentina);
         Player player2 = new Player(false, "Neymar", 23, brasil);
@@ -43,11 +40,23 @@ public class FootbalAplication {
         Player player21 = new Player(false, "Cavani", 25, uruguay);
         Player player22 = new Player(false, "Santiago Cañizares" , 31, spain);
 
+        Player player23 = new Player(true, "Mariona", 32, spain);
+        Player player24 = new Player(true, "Alexia", 23, spain);
+        Player player25 = new Player(true, "Aitana", 25, spain);
+        Player player26 = new Player(true, "Cata Coll" , 31, spain);
+
+        Player player27 = new Player(false, "Cavani", 36, uruguay);
+        Player player28 = new Player(false, "Marcos Rojo", 36, argentina);
+        Player player29 = new Player(false, "Sergio Romero", 36, argentina);
+
+
         // EQUIPS:
-        Team barcelona = new Team("Barcelona", spain, males);
-        Team realMadrid = new Team("Real Madrid", spain, males);
-        Team sevilla = new Team("SevillaFC", spain, males);
-        Team valencia = new Team("Valencia", spain, males);
+        Team barcelona = new Team("Barcelona", spain, Team.GENDER.MALE);
+        Team realMadrid = new Team("Real Madrid", spain, Team.GENDER.MALE);
+        Team sevilla = new Team("SevillaFC", spain, Team.GENDER.MALE);
+        Team valencia = new Team("Valencia", spain, Team.GENDER.MALE);
+        Team barcelonaFem = new Team("Barcelona Femeni", spain, Team.GENDER.FEMALE);
+        Team boca = new Team("Boca Juniors", argentina, Team.GENDER.MALE);
 
         barcelona.addPlayer(player1);
         barcelona.addPlayer(player2);
@@ -75,13 +84,31 @@ public class FootbalAplication {
         valencia.addPlayer(player21);
         valencia.addPlayer(player22);
 
-        // LLIGA:
-        League laLiga = new League("La Liga", spain, male);
+        barcelonaFem.addPlayer(player1);    // Ha de sortir malament
+        barcelonaFem.addPlayer(player23);
+        barcelonaFem.addPlayer(player24);
+        barcelonaFem.addPlayer(player25);
+        barcelonaFem.addPlayer(player26);
+
+        boca.addPlayer(player27);
+        boca.addPlayer(player28);
+        boca.addPlayer(player29);
+
+        // LLIGUES:
+        League laLiga = new League("La Liga", spain, League.GENDER.MALE);
+        League laLigaFem = new League("La Liga Femenina", spain, League.GENDER.FEMALE);
+        League LPF = new League("Liga Profesional de Argentina", argentina, League.GENDER.MALE);
 
         laLiga.addTeam(barcelona);
         laLiga.addTeam(realMadrid);
         laLiga.addTeam(sevilla);
         laLiga.addTeam(valencia);
+
+        laLigaFem.addTeam(realMadrid);      // Ha de sortir malament
+        laLigaFem.addTeam(barcelonaFem);
+
+        LPF.addTeam(valencia);              // Ha de sortir malament
+        LPF.addTeam(boca);
 
         // COMPROVACIONS:
         barcelona.printTeam();
@@ -100,6 +127,7 @@ public class FootbalAplication {
         valencia.printStats();
 
         player1.printStats();
+        player2.printStats();
         player10.printStats();
         player15.printStats();
         player20.printStats();
