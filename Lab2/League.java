@@ -37,47 +37,78 @@ public class League {
         return matchList;
     }
 
-    public void simulateMatches() {
-        for (Match match : matchList) {
-            match.simulateMatch();
-            Team team1 = match.getHomeTeam();
-            Team team2 = match.getAwayTeam();
-            team1.updateStats(match);
-            team2.updateStats(match);
-
-        }
-    }
 
     public void addTeam(Team team) {
         teamList.add(team);
     }
 
+
     public void generateMatches() {
         matchList = new LinkedList<>();
-        for (Team teamA : teamList) {
-            for (Team teamB : teamList) {
-                if (teamA != teamB) {
-                    Match match1 = new Match(teamA, teamB);
-                    Match match2 = new Match(teamB, teamA);
-                    matchList.add(match1);
-                    matchList.add(match2);
-                }
+
+        for (int i = 0; i < teamList.size(); i++) {
+            Team homeTeam = teamList.get(i);
+            for (int j = i + 1; j < teamList.size(); j++) {
+                Team awayTeam = teamList.get(j);
+                Match match1 = new Match(homeTeam, awayTeam);
+                Match match2 = new Match(awayTeam, homeTeam);
+                matchList.add(match1);
+                matchList.add(match2);
             }
         }
     }
 
-    public void printMatches(){
-        for (Match match : matchList){
-            System.out.println("En el partit entre " + match.getHomeTeam().getName() + " i " + match.getAwayTeam().getName());
-            System.out.println("L'equip " + match.getAwayTeam().getName() +" ha fet " + match.getAwayGoals() + " gols.");
-            System.out.println("L'equip " + match.getHomeTeam().getName() +" ha fet " + match.getHomeGoals() + " gols.");
+
+    public void simulateMatches() {
+        for (Match match : matchList) {
+            match.simulateMatch();
+            Team homeTeam = match.getHomeTeam();
+            Team awayTeam = match.getAwayTeam();
+            homeTeam.updateStats(match);
+            awayTeam.updateStats(match);
+
         }
     }
-}
+
+    public void printMatches() {
+        for (Match match : matchList) {
+            System.out.println(" ");
+            System.out.println("En el partit entre " + match.getHomeTeam().getName() + " i " + match.getAwayTeam().getName());
+            System.out.println("L'equip " + match.getHomeTeam().getName() +" ha fet " + match.getHomeGoals() + " gols.");
+            System.out.println("L'equip " + match.getAwayTeam().getName() +" ha fet " + match.getAwayGoals() + " gols.");
+            System.out.println(" ");
+        }
+    }
+
     /*
+    public void printLeagueMatches() {
+        for (Team team : teamList) {
+            System.out.println("Partits del " + team.getName() + ":");
+            
+            System.out.println("- Com LOCAL:");
+            for (Match match : matchList) {
+                if (match.getHomeTeam() == team) {
+                    System.out.println("\t" + match.getAwayTeam().getName());
+                }
+            }
+
+            System.out.println("- Com VISITANT:");
+                for (Match match : matchList) {
+                    if (match.getAwayTeam() == team) {
+                        System.out.println("\t" + match.getHomeTeam().getName());
+                    }
+                }
+            
+                System.out.println();
+        }
+    }
+    */
+
+
     public void printLeagueStandings() {
-        System.out.println("Clasificació de la lliga:");
-        System.out.println("Equip\t\tPartits Jugats\tGuanyats\tEmpatats\tPerduts");
+        System.out.println(" ");
+        System.out.println("Classificació de la lliga:");
+        System.out.println("Equip\t\t   Jugats\t Guanyats\t Empatats\t  Perduts");
 
         // Ordenar la lista de equipos según el número de partidos ganados de forma descendente usando el algoritmo de ordenación de burbuja
         for (int i = 0; i < teamList.size() - 1; i++) {
@@ -97,7 +128,6 @@ public class League {
     }
 }
 
-*/
 
 /*Per fer allo de quins jugadors fan quins gols necessito primer l'algoritme del pau
  * per saber quants gols a cada un així després poder-ho repartir entre els jugadors

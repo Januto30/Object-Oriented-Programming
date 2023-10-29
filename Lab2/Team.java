@@ -49,7 +49,6 @@ public class Team {
         return name;
     }
 
-
     public Country getCountry() {
         return country;
     }
@@ -58,36 +57,42 @@ public class Team {
         return gender;
     }
 
+    public LinkedList<Player> getPlayers() {
+        return playerList;
+    }
+
+
+
     public void addPlayer(Player p) {
         boolean gen_equip;
-        if (this.gender == GENDER.FEMALE){
+        if (this.gender == GENDER.FEMALE) {
             gen_equip = true;
-        }   else    {
+        } else {
             gen_equip = false;
         }
 
-        if (this.gender == GENDER.MIXED){
+        if (this.gender == GENDER.MIXED) {
             playerList.add(p);
-            if (p.getGender() == true){
-                System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
-            } else{
-                System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
+            if (p.getGender() == true) {
+                // System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
+            } else {
+                // System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
 
             }
 
-        }   else if (gen_equip == p.getGender()){
+        }   else if (gen_equip == p.getGender()) {
                 this.playerList.add(p);            
-                if (p.getGender() == true){
-                    System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
-                } else{
-                    System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
+                if (p.getGender() == true) {
+                    // System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
+                } else {
+                    // System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
 
                 }
             } else {
-                if (p.getGender() == true){
-                    System.out.println("- La jugadora " + p.getName() +  " no se la pot assignar per raons de gènere al equip " + this.name +".");
-                } else{
-                    System.out.println("- El jugador " + p.getName() +  " no se'l pot assignar per raons de gènere al equip " + this.name + ".");
+                if (p.getGender() == true) {
+                    // System.out.println("- La jugadora " + p.getName() +  " no se la pot assignar per raons de gènere al equip " + this.name +".");
+                } else {
+                    // System.out.println("- El jugador " + p.getName() +  " no se'l pot assignar per raons de gènere al equip " + this.name + ".");
                 }
             }
         System.out.println("");
@@ -114,9 +119,10 @@ public class Team {
     }
 
     public void printStats() {
+        System.out.println(" ");
         System.out.println("Informació de l'equip: ");
         System.out.println("Nom equip: " + name);
-        System.out.println("Pais: " + country);
+        System.out.println("Pais: " + country.getName());
         System.out.println("Genere: " + gender);
         System.out.println("Total partits jugats: " + numMatches);
         System.out.println("Total partits guanyats: " + numWins);
@@ -124,19 +130,20 @@ public class Team {
         System.out.println("Total partits perduts: " + numLosses);
         System.out.println("Total gols marcats: " + numGoalsScored);
         System.out.println("Total gols encajados: " + numGoalsAgainst);
+        System.out.println(" ");
     }
 
-    public void printTeam(){
+    public void printTeam() {
+        System.out.println(" ");
         System.out.println("________________");
-        System.out.println("|"+name);
+        System.out.println("|"+ name);
         System.out.println("|---------------");
 
-        for (int i = 0; i < playerList.size(); i++) {
-            Player player = playerList.get(i);
-            System.out.println("|-"+player.getName());
+        for (Player player : playerList) {
+            System.out.println("|- "+ player.getName());
         }
         System.out.println("----------------");
-
+        System.out.println(" ");
     }
 
     public void updateStats(Match match) {

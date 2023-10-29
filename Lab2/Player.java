@@ -4,7 +4,7 @@ public class Player {
     private boolean gender;
     private String name;
     private int age;
-    private Country nacionality;
+    private Country country;
     private int numMatches;
     private int numTackles;
     private int numPasses;
@@ -16,7 +16,7 @@ public class Player {
         this.gender = g;
         this.name = name;
         this.age = age;
-        this.nacionality = nac;
+        this.country = nac;
     }
 
     public boolean getGender() {
@@ -32,7 +32,7 @@ public class Player {
     }
 
     public Country getNacionality() {
-        return nacionality;
+        return country;
     }
 
     public void update(int tackles, int passes, int shots, int assists, int goals) {
@@ -56,7 +56,7 @@ public class Player {
 
         }
         System.out.println("| Edat:\t\t\t" + age);
-        System.out.println("| Nacionalitat:\t\t" + nacionality.getName());
+        System.out.println("| Nacionalitat:\t\t" + country.getName());
         System.out.println("| Partits jugats:\t" + numMatches);
         System.out.println("| Entrades:\t\t" + numTackles);
         System.out.println("| Passes:\t\t" + numPasses);
