@@ -102,6 +102,7 @@ public class League {
         }
     }
 
+    /*
     public void printLeagueClasification() {
         System.out.println(" ");
         System.out.println("Classificació de la lliga:");
@@ -123,4 +124,5 @@ public class League {
                     "\t\t" + team.getNumTies() + "\t\t" + team.getNumLosses());
         }
     }
+    */
 }

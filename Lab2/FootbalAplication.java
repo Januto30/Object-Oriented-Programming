@@ -119,7 +119,6 @@ public class FootbalAplication {
         laLiga.generateMatches();
         laLiga.simulateMatches();
         laLiga.printMatches();
-        laLiga.printLeagueClasification();
 
         barcelona.printStats();
         realMadrid.printStats();
@@ -127,7 +126,7 @@ public class FootbalAplication {
         valencia.printStats();
 
         player1.printStats();
-        player2.printStats();
+        player3.printStats();
         player10.printStats();
         player15.printStats();
         player20.printStats();
