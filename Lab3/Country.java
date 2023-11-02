@@ -10,4 +10,12 @@ public class Country {
     public String getName() {
         return name;
     }
+
+    public boolean equals(Object o){
+        if (o instanceof Country){
+            Country c = (Country)o;
+            return name == c.name;
+        }
+        else return false;
+    }
 }
