@@ -1,4 +1,4 @@
-package Lab2;
+package Lab3;
 
 public class Player {
     private boolean gender;
