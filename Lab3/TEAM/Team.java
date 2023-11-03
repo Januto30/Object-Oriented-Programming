@@ -121,6 +121,8 @@ public class Team {
             numTies++;
         }
     }
+    ------------------------------------------------------------------------------------------
+    */
 
     public void printStats() {
         System.out.println(" ");
@@ -149,8 +151,7 @@ public class Team {
         System.out.println("----------------");
         System.out.println(" ");
     }
-    ------------------------------------------------------------------------------------------
-    */
+
     public void updateStats(Match match) {
         this.numMatches++;
 

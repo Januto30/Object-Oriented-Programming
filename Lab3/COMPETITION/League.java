@@ -14,8 +14,6 @@ public class League extends Competition {
 
     @Override
     public void generateMatches(){
-        matchList = new LinkedList<>();
-
         for (int i = 0; i < teamList.size(); i++) {
             Team homeTeam = teamList.get(i);
             for (int j = i + 1; j < teamList.size(); j++) {

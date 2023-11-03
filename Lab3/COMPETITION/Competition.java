@@ -110,7 +110,7 @@ public class Competition {
             Team awayTeam = match.getAwayTeam();
             homeTeam.updateStats(match);
             awayTeam.updateStats(match);
-
+             
         }
     }
 
