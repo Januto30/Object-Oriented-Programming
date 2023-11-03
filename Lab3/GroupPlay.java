@@ -1,5 +1,20 @@
 package Lab3;
 
-public class GroupPlay {
-    
+import java.util.LinkedList;
+
+public class GroupPlay extends Competition {
+    private Integer noGroups;
+    private LinkedList<League> ListLeagues;
+
+    public GroupPlay(String name, Country country, GENDER gender) {
+        super(false, name, country, gender);
+    }
+
+    public Integer getNoGroups() {
+        return noGroups;
+    }
+
+    public LinkedList<League> getListLeagues() {
+        return ListLeagues;
+    }
 }
