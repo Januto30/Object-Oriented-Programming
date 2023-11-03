@@ -1,6 +1,8 @@
-package Lab3;
+package Lab3.COMPETITION;
 
 import java.util.LinkedList;
+
+import Lab3.COUNTRY.Country;
 
 public class GroupPlay extends Competition {
     private Integer noGroups;

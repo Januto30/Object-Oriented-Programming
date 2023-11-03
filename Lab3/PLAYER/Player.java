@@ -1,4 +1,6 @@
-package Lab3;
+package Lab3.PLAYER;
+
+import Lab3.COUNTRY.Country;
 
 public class Player {
     private boolean gender;

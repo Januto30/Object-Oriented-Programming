@@ -1,4 +1,10 @@
-package Lab3;
+package Lab3.COMPETITION;
+
+import java.util.LinkedList;
+
+import Lab3.COUNTRY.Country;
+import Lab3.MATCH.Match;
+import Lab3.TEAM.Team;
 
 public class League extends Competition {
 
@@ -8,11 +14,22 @@ public class League extends Competition {
 
     @Override
     public void generateMatches(){
+        matchList = new LinkedList<>();
 
+        for (int i = 0; i < teamList.size(); i++) {
+            Team homeTeam = teamList.get(i);
+            for (int j = i + 1; j < teamList.size(); j++) {
+                Team awayTeam = teamList.get(j);
+                Match match1 = new Match(homeTeam, awayTeam);
+                Match match2 = new Match(awayTeam, homeTeam);
+                matchList.add(match1);
+                matchList.add(match2);
+            }
+        }
     }
 
+    //No s'ha de definir
     public void printTables(){
-
     }
 
     /*

@@ -1,5 +1,9 @@
-package Lab3;
+package Lab3.TEAM;
 import java.util.*;
+
+import Lab3.COUNTRY.Country;
+import Lab3.MATCH.Match;
+import Lab3.PLAYER.Player;
 
 public class Team {
     private String name;

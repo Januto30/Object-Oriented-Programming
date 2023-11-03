@@ -1,6 +1,10 @@
-package Lab3;
+package Lab3.MATCH;
 
 import java.util.LinkedList;
+
+import Lab3.COMPETITION.Competition;
+import Lab3.COUNTRY.Country;
+import Lab3.TEAM.Team;
 
 public class Cup extends Competition{
         private LinkedList<Team> ListTeam;

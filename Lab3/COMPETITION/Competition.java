@@ -1,6 +1,12 @@
-package Lab3;
+package Lab3.COMPETITION;
 
 import java.util.LinkedList;
+
+import Lab3.COUNTRY.Country;
+import Lab3.MATCH.Match;
+import Lab3.TEAM.NationalTeam;
+import Lab3.TEAM.Team;
+import Lab3.TEAM.Team.GENDER;
 
 public class Competition {
     protected String name;

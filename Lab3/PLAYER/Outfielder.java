@@ -1,4 +1,4 @@
-package Lab3;
+package Lab3.PLAYER;
 
 public class Outfielder {
     

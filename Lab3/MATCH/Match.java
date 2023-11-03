@@ -1,8 +1,11 @@
-package Lab3;
+package Lab3.MATCH;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+
+import Lab3.PLAYER.Player;
+import Lab3.TEAM.Team;
 
 public class Match {
     private Team homeTeam;

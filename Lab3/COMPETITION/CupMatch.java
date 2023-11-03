@@ -1,4 +1,4 @@
-package Lab3;
+package Lab3.COMPETITION;
 
 public class CupMatch {
     
