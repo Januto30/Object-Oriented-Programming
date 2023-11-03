@@ -17,4 +17,18 @@ public class GroupPlay extends Competition {
     public LinkedList<League> getListLeagues() {
         return ListLeagues;
     }
+
+    @Override
+    public void generateMatches() {
+
+    }
+
+    @Override
+    public void simulateMatches() {
+
+    }
+
+    public void printTables(){
+        
+    }
 }

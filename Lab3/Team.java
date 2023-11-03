@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Team {
     private String name;
-    private Country country;
+    protected Country country;
     public enum GENDER {MALE, FEMALE, MIXED};
     private GENDER gender;
     private int numMatches;
@@ -61,7 +61,6 @@ public class Team {
         return playerList;
     }
 
-
     public void addPlayer(Player p) {
         boolean gen_equip;
         if (this.gender == GENDER.FEMALE) {
@@ -101,6 +100,8 @@ public class Team {
         playerList.remove(p);
     }
 
+    /*Tot això ja no ho ha de fer l'objecte TEAM
+    ------------------------------------------------------------------------------------------
     public void playMatch(int scored, int against) {
         numMatches++;       
         numGoalsScored += scored;
@@ -144,7 +145,8 @@ public class Team {
         System.out.println("----------------");
         System.out.println(" ");
     }
-
+    ------------------------------------------------------------------------------------------
+    */
     public void updateStats(Match match) {
         this.numMatches++;
 

@@ -18,5 +18,12 @@ public class Cup extends Competition{
             return ListMatch;
         }
 
+        @Override
+        public void simulateMatches() {
+            
+        }
         
+        public void printBracket(){
+            
+        }
 }

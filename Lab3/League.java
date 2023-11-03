@@ -11,7 +11,7 @@ public class League extends Competition {
 
     }
 
-    public void printMathces(){
+    public void printTables(){
 
     }
 
