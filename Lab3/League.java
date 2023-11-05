@@ -1,33 +1,24 @@
-package Lab3.COMPETITION;
-
-import java.util.LinkedList;
-
-import Lab3.COUNTRY.Country;
-import Lab3.MATCH.Match;
-import Lab3.TEAM.Team;
 
 public class League extends Competition {
 
-    public League(String name, Country country, GENDER gender) {
+    public League (String name, Country country, GENDER gender) {
         super(false, name, country, gender);
     }
 
     @Override
-    public void generateMatches(){
+    public void generateMatches() {
         for (int i = 0; i < teamList.size(); i++) {
             Team homeTeam = teamList.get(i);
+            
             for (int j = i + 1; j < teamList.size(); j++) {
                 Team awayTeam = teamList.get(j);
                 Match match1 = new Match(homeTeam, awayTeam);
                 Match match2 = new Match(awayTeam, homeTeam);
                 matchList.add(match1);
                 matchList.add(match2);
+
             }
         }
-    }
-
-    //No s'ha de definir
-    public void printTables(){
     }
 
     /*

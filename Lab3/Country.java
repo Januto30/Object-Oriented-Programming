@@ -1,5 +1,3 @@
-package Lab3.COUNTRY;
-
 public class Country {
     private String name;
 
@@ -11,11 +9,14 @@ public class Country {
         return name;
     }
 
-    public boolean equals(Object o){
-        if (o instanceof Country){
+    public boolean equals(Object o) {
+
+        if (o instanceof Country) {
             Country c = (Country)o;
             return name == c.name;
+
+        } else  {
+            return false;
         }
-        else return false;
     }
 }

@@ -1,11 +1,6 @@
-package Lab3.MATCH;
-
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
-
-import Lab3.PLAYER.Player;
-import Lab3.TEAM.Team;
 
 public class Match {
     private Team homeTeam;
@@ -39,7 +34,7 @@ public class Match {
         return awayScorers;
     }
 
-    public Match(Team homeTeam, Team awayTeam) {
+    public Match (Team homeTeam, Team awayTeam) {
         this.homeTeam = homeTeam;
         this.awayTeam = awayTeam;
         this.homeScorers = new LinkedList<>();
@@ -57,11 +52,13 @@ public class Match {
         for (int i = 0; i < homeGoals; i++) {
             Player scorer = homePlayers.get(random.nextInt(homePlayers.size()));
             homeScorers.add(scorer);
+            
         }
 
         for (int i = 0; i < awayGoals; i++) {
             Player scorer = awayPlayers.get(random.nextInt(awayPlayers.size()));
             awayScorers.add(scorer);
+
         }
 
     }
@@ -75,10 +72,11 @@ public class Match {
         } else {
             System.out.println("");
             System.out.println("Golejadors de l'equip local " + homeTeam.getName() + ":");
+            
             for (Player scorer : homeScorers) {
                 System.out.println(" - " + scorer.getName());
-            }
 
+            }
         }
         
         if (awayGoals == 0) {
@@ -87,8 +85,10 @@ public class Match {
         } else {
             System.out.println(" ");
             System.out.println("Golejadors de l'equip visitant " + awayTeam.getName() + ":");
+            
             for (Player scorer : awayScorers) {
                 System.out.println(" - " + scorer.getName());
+
             }
         }
     }

@@ -1,7 +1,3 @@
-package Lab3.PLAYER;
-
-import Lab3.COUNTRY.Country;
-
 public class Player {
     private boolean gender;
     private String name;
@@ -14,7 +10,7 @@ public class Player {
     private int numAssists;
     private int numGoals;
 
-    public Player(boolean g, String name, int age, Country nac) {
+    public Player (boolean g, String name, int age, Country nac) {
         this.gender = g;
         this.name = name;
         this.age = age;
@@ -51,12 +47,14 @@ public class Player {
         System.out.println("|PLAYER STATS");
         System.out.println("|_____________________________________________");
         System.out.println("| Nom:\t\t\t" + name);
+        
         if (gender == false){
             System.out.println("| Genere:\t\t" + "Home");
+
         } else  {
             System.out.println("| Genere:\t\t" + "Dona");
-
         }
+
         System.out.println("| Edat:\t\t\t" + age);
         System.out.println("| Nacionalitat:\t\t" + country.getName());
         System.out.println("| Partits jugats:\t" + numMatches);

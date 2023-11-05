@@ -1,12 +1,4 @@
-package Lab3.COMPETITION;
-
 import java.util.LinkedList;
-
-import Lab3.COUNTRY.Country;
-import Lab3.MATCH.Match;
-import Lab3.TEAM.NationalTeam;
-import Lab3.TEAM.Team;
-import Lab3.TEAM.Team.GENDER;
 
 public class Competition {
     protected String name;
@@ -17,7 +9,7 @@ public class Competition {
     protected LinkedList<Team> teamList;
     protected LinkedList<Match> matchList;
 
-    public Competition(boolean clubs, String name, Country country, GENDER gender) {
+    public Competition (boolean clubs, String name, Country country, GENDER gender) {
         this.name = name;
         this.country = country;
         this.gender = gender;
@@ -59,7 +51,7 @@ public class Competition {
                 }
             }
             if (this.gender == GENDER.MIXED) {
-            validTeamGen = true;
+                validTeamGen = true;
 
             } else if (this.gender == GENDER.FEMALE && team.getGender() == Team.GENDER.FEMALE) {
                 validTeamGen = true;
@@ -110,7 +102,6 @@ public class Competition {
             Team awayTeam = match.getAwayTeam();
             homeTeam.updateStats(match);
             awayTeam.updateStats(match);
-             
         }
     }
 
@@ -121,5 +112,4 @@ public class Competition {
             System.out.println(" ");
         }
     }
-
 }

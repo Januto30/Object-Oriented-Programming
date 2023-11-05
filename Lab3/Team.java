@@ -1,9 +1,4 @@
-package Lab3.TEAM;
-import java.util.*;
-
-import Lab3.COUNTRY.Country;
-import Lab3.MATCH.Match;
-import Lab3.PLAYER.Player;
+import java.util.LinkedList;
 
 public class Team {
     private String name;
@@ -172,8 +167,8 @@ public class Team {
                 for (Player scorer : match.getHomeScorers()) {
                     if (scorer == player) {
                         goalsScored++;
-                    }
-                }
+                    } // Player scorer : match.getHomeScorers()
+                } 
                 player.update(0, 0, 0, 0, goalsScored); 
             }
 
