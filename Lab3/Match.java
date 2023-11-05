@@ -3,12 +3,12 @@ import java.util.List;
 import java.util.Random;
 
 public class Match {
-    private Team homeTeam;
-    private Team awayTeam;
-    private int homeGoals;
-    private int awayGoals;
-    private LinkedList<Player> homeScorers;
-    private LinkedList<Player> awayScorers;
+    protected Team homeTeam;
+    protected Team awayTeam;
+    protected int homeGoals;
+    protected int awayGoals;
+    protected LinkedList<Player> homeScorers;
+    protected LinkedList<Player> awayScorers;
     
     public Team getHomeTeam() {
         return homeTeam;
@@ -41,7 +41,7 @@ public class Match {
         this.awayScorers = new LinkedList<>();
     }
 
-    public void simulateMatch() {
+    public void simulateMatch() {                   // Afegir llista de jugadors que fan assistencia
         Random random = new Random();
         this.homeGoals = random.nextInt(4);
         this.awayGoals = random.nextInt(4);

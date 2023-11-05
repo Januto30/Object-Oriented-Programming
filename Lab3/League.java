@@ -22,7 +22,7 @@ public class League extends Competition {
     }
 
     /*
-    public void printLeagueClasification() {
+    public void printTable() {
         System.out.println(" ");
         System.out.println("Classificació de la lliga:");
         System.out.println("Equip\t\t   Jugats\t Guanyats\t Empatats\t  Perduts");

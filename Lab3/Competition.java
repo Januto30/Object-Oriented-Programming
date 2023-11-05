@@ -15,6 +15,7 @@ public class Competition {
         this.gender = gender;
         this.clubs = clubs;
         this.teamList = new LinkedList<>();
+        // this.matchList = new LinkedList<>();     S'HA DE POSAR??
     }
 
     public GENDER getGender() {
@@ -43,13 +44,16 @@ public class Competition {
         boolean validTeam = true;
 
 
-        if (team instanceof NationalTeam){
+        if (team instanceof NationalTeam) {
             int size = teamList.size();
-            for (int i=0; i<size; i++){
-                if (teamList.get(i).getName().equals(team.getName())){
+
+            for (int i = 0; i < size; i++) {
+                if (teamList.get(i).getName().equals(team.getName())) {
                     validTeamNat = false;
+
                 }
             }
+
             if (this.gender == GENDER.MIXED) {
                 validTeamGen = true;
 
@@ -72,27 +76,31 @@ public class Competition {
         
         } else {
             if (this.gender == GENDER.MIXED) {
-            validTeamGen = true;
+                validTeamGen = true;
+            
+            } else if (this.gender == GENDER.FEMALE && team.getGender() == Team.GENDER.FEMALE) {
+                validTeamGen = true;
 
-        } else if (this.gender == GENDER.FEMALE && team.getGender() == Team.GENDER.FEMALE) {
-            validTeamGen = true;
+            } else if (this.gender == GENDER.MALE && team.getGender() == Team.GENDER.MALE) {
+                validTeamGen = true;
 
-        } else if (this.gender == GENDER.MALE && team.getGender() == Team.GENDER.MALE) {
-            validTeamGen = true;
+            } else {
+                validTeamGen = false;
 
-        } else {
-            validTeamGen = false;
-        }
-
-        } if (validTeamGen == validTeamNat){
-                teamList.add(team);
+            }
+        } 
+        
+        if (validTeamGen == validTeamNat){
+            teamList.add(team);
 
         } else {
             System.out.println("-> L'equip " + team.getName() + " no pot ser afegit a aquesta competició perque no concorden els generes o la nacionalitat.");
+
         }
     }
 
-    public void generateMatches() {
+    public void generateMatches() {         // fer generateMatches()
+
     }
 
     public void simulateMatches() {
@@ -112,4 +120,10 @@ public class Competition {
             System.out.println(" ");
         }
     }
+
+    /* No importa fer
+     * public void printGoalScorers(int k) {
+     * 
+     * }
+     */
 }

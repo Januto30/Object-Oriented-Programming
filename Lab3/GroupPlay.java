@@ -1,15 +1,15 @@
 import java.util.LinkedList;
 
 public class GroupPlay extends Competition {
-    private Integer noGroups;
+    private int numGroups;
     private LinkedList<League> ListLeagues;
 
     public GroupPlay (String name, Country country, GENDER gender) {
         super(false, name, country, gender);
     }
 
-    public Integer getNoGroups() {
-        return noGroups;
+    public int getNumGroups() {
+        return numGroups;
     }
 
     public LinkedList<League> getListLeagues() {
@@ -19,7 +19,7 @@ public class GroupPlay extends Competition {
     @Override
     public void generateMatches() {
 
-        for (int i = 0; i<noGroups; i++) {
+        for (int i = 0; i < numGroups; i++) {
 
             for (int a = 0; a < teamList.size(); a++) {
                 Team homeTeam = teamList.get(i);

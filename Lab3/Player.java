@@ -1,14 +1,15 @@
 public class Player {
-    private boolean gender;
-    private String name;
-    private int age;
-    private Country country;
-    private int numMatches;
-    private int numTackles;
-    private int numPasses;
-    private int numShots;
-    private int numAssists;
-    private int numGoals;
+    protected boolean gender;
+    protected String name;
+    protected int age;
+    protected Country country;
+    protected int numMatches;
+    
+    // private int numTackles;
+    // private int numPasses;
+    // private int numShots;
+    // private int numAssists;
+    // private int numGoals;
 
     public Player (boolean g, String name, int age, Country nac) {
         this.gender = g;
@@ -33,14 +34,33 @@ public class Player {
         return country;
     }
 
-    public void update(int tackles, int passes, int shots, int assists, int goals) {
-        this.numMatches += 1;
-        this.numTackles += tackles;
-        this.numPasses += passes;
-        this.numShots += shots;
-        this.numAssists += assists;
-        this.numGoals += goals;
+    public boolean equals (Object o) {
+        if (this == o) {
+            return true;
+
+        }
+
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+
+        }
+
+        Player player = (Player) o;
+        return gender == player.gender && age == player.age && numMatches == player.numMatches && name.equals(player.name) && country.equals(player.country);
+
     }
+
+    public void updateStats(Match match) {
+        this.numMatches += 1;
+        
+    }
+
+    /*
+     * public void update(int tackles, int passes, int shots, int assists, int goals) {
+        this.numMatches += 1;
+        
+    }
+    */
 
     public void printStats() {
         System.out.println("______________________________________________");
@@ -58,11 +78,11 @@ public class Player {
         System.out.println("| Edat:\t\t\t" + age);
         System.out.println("| Nacionalitat:\t\t" + country.getName());
         System.out.println("| Partits jugats:\t" + numMatches);
-        System.out.println("| Entrades:\t\t" + numTackles);
-        System.out.println("| Passes:\t\t" + numPasses);
-        System.out.println("| Dispars:\t\t" + numShots);
-        System.out.println("| Assistencies:\t\t" + numAssists);
-        System.out.println("| Gols:\t\t\t" + numGoals);
+        // System.out.println("| Entrades:\t\t" + numTackles);
+        // System.out.println("| Passes:\t\t" + numPasses);
+        // System.out.println("| Dispars:\t\t" + numShots);
+        // System.out.println("| Assistencies:\t\t" + numAssists);
+        // System.out.println("| Gols:\t\t\t" + numGoals);
         System.out.println("|_____________________________________________");
         System.out.println("");
     }

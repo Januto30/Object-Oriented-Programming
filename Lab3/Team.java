@@ -116,8 +116,6 @@ public class Team {
             numTies++;
         }
     }
-    ------------------------------------------------------------------------------------------
-    */
 
     public void printStats() {
         System.out.println(" ");
@@ -147,7 +145,10 @@ public class Team {
         System.out.println(" ");
     }
 
-    public void updateStats(Match match) {
+    ------------------------------------------------------------------------------------------
+    */
+
+    public void updateStats(Match match) {              // Revisar si esta be s'update de Team (ja que s'ha canviat updateStats de Player)
         this.numMatches++;
 
         if (match.getHomeTeam() == this) {
@@ -156,20 +157,25 @@ public class Team {
 
             if (match.getHomeGoals() > match.getAwayGoals()) {
                 this.numWins++;
+
             } else if (match.getHomeGoals() < match.getAwayGoals()) {
                 this.numLosses++;
+
             } else {
                 this.numTies++;
+
             }
 
             for (Player player : playerList) {
                 int goalsScored = 0;
+
                 for (Player scorer : match.getHomeScorers()) {
                     if (scorer == player) {
                         goalsScored++;
-                    } // Player scorer : match.getHomeScorers()
+
+                    }   // Player scorer : match.getHomeScorers()
                 } 
-                player.update(0, 0, 0, 0, goalsScored); 
+                player.updateStats(match); 
             }
 
         } else if (match.getAwayTeam() == this) {
@@ -178,20 +184,25 @@ public class Team {
 
             if (match.getAwayGoals() > match.getHomeGoals()) {
                 this.numWins++;
+
             } else if (match.getAwayGoals() < match.getHomeGoals()) {
                 this.numLosses++;
+
             } else {
                 this.numTies++;
+
             }
 
             for (Player player : playerList) {
                 int goalsScored = 0;
+                
                 for (Player scorer : match.getAwayScorers()) {
                     if (scorer == player) {
                         goalsScored++;
+
                     }
                 }
-                player.update(0, 0, 0, 0, goalsScored); 
+                player.updateStats(match); 
             }
         }
     }

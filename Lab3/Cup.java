@@ -23,9 +23,9 @@ public class Cup extends Competition {
         Collections.shuffle(listTeam);
         listTeam.removeIf(s -> s.equals(""));
 
-        for(int i = 0; i < size && i+1 < size; i=i+2 ) {
+        for(int i = 0; i < size && i + 1 < size; i = i + 2 ) {
             Team team1 = teamList.get(i);
-            Team team2 = teamList.get(i+1);
+            Team team2 = teamList.get(i + 1);
             Match match1 = new Match(team1, team2);
             matchList.add(match1);
 
@@ -44,8 +44,10 @@ public class Cup extends Competition {
             
             if (match.getAwayGoals() < match.getHomeGoals()) {
                 listTeam.remove(awayTeam);
+
             } else {
                 listTeam.remove(homeTeam);
+                
             }
         }
     }
