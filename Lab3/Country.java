@@ -13,7 +13,7 @@ public class Country {
 
         if (o instanceof Country) {
             Country c = (Country)o;
-            return name == c.name;
+            return name.equals(c.name);
 
         } else  {
             return false;

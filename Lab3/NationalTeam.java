@@ -7,6 +7,8 @@ public class NationalTeam extends Team {
 
     @Override
     public void addPlayer(Player p) {
+        super.addPlayer(p);
+
         if(country.equals(p.getNacionality())) {
             super.addPlayer(p);
 

@@ -20,16 +20,31 @@ public class Outfielder extends Player {
     @Override
     public void updateStats(Match match) {
         Random random = new Random();
+        int goalsScored = 0;
 
         super.updateStats(match);
 
         this.numTackles += random.nextInt(10);
         this.numPasses += random.nextInt(60);
         this.numShots += random.nextInt(2);
-        // this.numAssists +=           // si es jugador ha fet asistencia es suma un
-        // this.numGoals +=             // si es jugador ha fet gol es suma un
-        // per mirar si es jugador forma part de sa llista de jugadors que han marcat
-        // s'ha de mirar de quin equip es (home o away) i mirar sa llista corresponent
+
+        this.numAssists += random.nextInt(1);           // Es podria fer millor
+
+        for (Player player : match.getHomeTeam().getPlayers()) {
+            if (player.getName().equals(super.getName()) && match.getHomeScorers().contains(player)) {
+                goalsScored++;
+
+            }
+        }
+
+        for (Player player : match.getAwayTeam().getPlayers()) {
+            if (player.getName().equals(super.getName()) && match.getAwayScorers().contains(player)) {
+                goalsScored++;
+
+            }
+        }
+
+        this.numGoals += goalsScored;
 
     }
 }

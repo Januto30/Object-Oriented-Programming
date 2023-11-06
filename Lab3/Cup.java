@@ -7,6 +7,7 @@ public class Cup extends Competition {
 
     public Cup(String name, Country country, GENDER gender) {
         super(false, name, country, gender);
+
     }
 
     public LinkedList<Team> getListTeam() {
@@ -28,9 +29,7 @@ public class Cup extends Competition {
             Team team2 = teamList.get(i + 1);
             Match match1 = new Match(team1, team2);
             matchList.add(match1);
-
         }
-
     }
 
     @Override

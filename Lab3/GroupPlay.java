@@ -26,8 +26,8 @@ public class GroupPlay extends Competition {
 
                 for (int j = a + 1; j < teamList.size(); j++) {
                     Team awayTeam = teamList.get(j);
-                    Match match1 = new Match(homeTeam, awayTeam);
-                    matchList.add(match1);
+                    Match match = new Match(homeTeam, awayTeam);
+                    matchList.add(match);
 
                 }
             }

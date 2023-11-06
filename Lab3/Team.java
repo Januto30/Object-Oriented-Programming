@@ -70,6 +70,7 @@ public class Team {
 
         if (this.gender == GENDER.MIXED) {
             playerList.add(p);
+
             if (p.getGender() == true) {
                 System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
             } else {
@@ -77,76 +78,31 @@ public class Team {
 
             }
 
-        }   else if (gen_equip == p.getGender()) {
-                this.playerList.add(p);            
-                if (p.getGender() == true) {
-                    System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
-                } else {
-                    System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
-
-                }
+        } else if (gen_equip == p.getGender()) {
+            this.playerList.add(p);            
+            if (p.getGender() == true) {
+                System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
             } else {
-                if (p.getGender() == true) {
-                    System.out.println("-> La jugadora " + p.getName() +  " no se la pot assignar per raons de gènere al equip " + this.name +".");
-                } else {
-                    System.out.println("-> El jugador " + p.getName() +  " no se'l pot assignar per raons de gènere al equip " + this.name + ".");
-                }
+                System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
             }
+            
+        } else {
+            if (p.getGender() == true) {
+                System.out.println("-> La jugadora " + p.getName() +  " no se la pot assignar per raons de gènere al equip " + this.name +".");
+            } else {
+                System.out.println("-> El jugador " + p.getName() +  " no se'l pot assignar per raons de gènere al equip " + this.name + ".");
+            }
+        }
+
         System.out.println("");
     }
 
+
     public void removePlayer(Player p) {
         playerList.remove(p);
+
     }
 
-    /*Tot això ja no ho ha de fer l'objecte TEAM
-    ------------------------------------------------------------------------------------------
-    public void playMatch(int scored, int against) {
-        numMatches++;       
-        numGoalsScored += scored;
-        numGoalsAgainst += against;
-
-        if (scored > against) {
-            numWins++;
-
-        } else if (scored < against) {
-            numLosses++;
-
-        } else {
-            numTies++;
-        }
-    }
-
-    public void printStats() {
-        System.out.println(" ");
-        System.out.println("Informació de l'equip: ");
-        System.out.println("Nom equip: " + name);
-        System.out.println("Pais: " + country.getName());
-        System.out.println("Genere: " + gender);
-        System.out.println("Total partits jugats: " + numMatches);
-        System.out.println("Total partits guanyats: " + numWins);
-        System.out.println("Total partits empatats: " + numTies);
-        System.out.println("Total partits perduts: " + numLosses);
-        System.out.println("Total gols marcats: " + numGoalsScored);
-        System.out.println("Total gols encaixats: " + numGoalsAgainst);
-        System.out.println(" ");
-    }
-
-    public void printTeam() {
-        System.out.println(" ");
-        System.out.println("________________");
-        System.out.println("|"+ name);
-        System.out.println("|---------------");
-
-        for (Player player : playerList) {
-            System.out.println("|- "+ player.getName());
-        }
-        System.out.println("----------------");
-        System.out.println(" ");
-    }
-
-    ------------------------------------------------------------------------------------------
-    */
 
     public void updateStats(Match match) {              // Revisar si esta be s'update de Team (ja que s'ha canviat updateStats de Player)
         this.numMatches++;
@@ -206,4 +162,54 @@ public class Team {
             }
         }
     }
+
+
+    /*  Tot això ja importa que ho faci l'objecte TEAM
+    ------------------------------------------------------------------------------------------
+    public void playMatch(int scored, int against) {
+        numMatches++;       
+        numGoalsScored += scored;
+        numGoalsAgainst += against;
+
+        if (scored > against) {
+            numWins++;
+
+        } else if (scored < against) {
+            numLosses++;
+
+        } else {
+            numTies++;
+        }
+    }
+
+    public void printStats() {
+        System.out.println(" ");
+        System.out.println("Informació de l'equip: ");
+        System.out.println("Nom equip: " + name);
+        System.out.println("Pais: " + country.getName());
+        System.out.println("Genere: " + gender);
+        System.out.println("Total partits jugats: " + numMatches);
+        System.out.println("Total partits guanyats: " + numWins);
+        System.out.println("Total partits empatats: " + numTies);
+        System.out.println("Total partits perduts: " + numLosses);
+        System.out.println("Total gols marcats: " + numGoalsScored);
+        System.out.println("Total gols encaixats: " + numGoalsAgainst);
+        System.out.println(" ");
+    }
+
+    public void printTeam() {
+        System.out.println(" ");
+        System.out.println("________________");
+        System.out.println("|"+ name);
+        System.out.println("|---------------");
+
+        for (Player player : playerList) {
+            System.out.println("|- "+ player.getName());
+        }
+        System.out.println("----------------");
+        System.out.println(" ");
+    }
+
+    ------------------------------------------------------------------------------------------
+    */
 }

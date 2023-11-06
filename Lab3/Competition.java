@@ -15,7 +15,7 @@ public class Competition {
         this.gender = gender;
         this.clubs = clubs;
         this.teamList = new LinkedList<>();
-        // this.matchList = new LinkedList<>();     S'HA DE POSAR??
+        this.matchList = new LinkedList<>();
     }
 
     public GENDER getGender() {
@@ -41,8 +41,6 @@ public class Competition {
     public void addTeam(Team team) {
         boolean validTeamNat = true;
         boolean validTeamGen = true;
-        boolean validTeam = true;
-
 
         if (team instanceof NationalTeam) {
             int size = teamList.size();
@@ -99,7 +97,7 @@ public class Competition {
         }
     }
 
-    public void generateMatches() {         // fer generateMatches()
+    public void generateMatches() {
 
     }
 
@@ -121,7 +119,7 @@ public class Competition {
         }
     }
 
-    /* No importa fer
+    /*          No importa fer
      * public void printGoalScorers(int k) {
      * 
      * }

@@ -9,14 +9,14 @@ public class CupMatch extends Match {
     }
 
     @Override
-    public void simulateMatch() {                   // Afegir llista de jugadors que fan assistencia
+    public void simulateMatch() {
         Random random = new Random();
-        super.homeGoals = random.nextInt(4);
-        super.awayGoals = random.nextInt(4);
+        super.homeGoals = random.nextInt(5);
+        super.awayGoals = random.nextInt(5);
 
         while (homeGoals == awayGoals) {
-            super.homeGoals += random.nextInt(2);
-            super.awayGoals += random.nextInt(2);
+            super.homeGoals += random.nextInt(3);
+            super.awayGoals += random.nextInt(3);
 
         }
 
@@ -33,6 +33,4 @@ public class CupMatch extends Match {
             awayScorers.add(scorer);
         }
     }
-
-
 }

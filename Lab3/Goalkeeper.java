@@ -17,19 +17,21 @@ public class Goalkeeper extends Player {
 
         super.updateStats(match);
 
-        /*   S'ha de comprovar que es porter es local o visitant i posar es gols que ha marcat s'equip contrari.
-        if (match.getHomeTeam().equals(this.getTeam())) {
-            this.numSaves += random.nextInt(4);
-            this.numGoalsLet += match.getHomeGoals();
+        for (Player player : match.getHomeTeam().getPlayers()) {
+            if (player.getName().equals(super.getName())) {
+                this.numSaves += random.nextInt(5);
+                this.numGoalsLet += match.getAwayGoals();
 
-        } else if (match.getAwayTeam().equals(this.getTeam())) {
-            this.numSaves += random.nextInt(4);
-            this.numGoalsLet += match.getAwayGoals();
-
+            }
         }
-        */
 
-
+        for (Player player : match.getAwayTeam().getPlayers()) {
+            if (player.getName().equals(super.getName())) {
+                this.numSaves += random.nextInt(5);
+                this.numGoalsLet += match.getHomeGoals();
+                
+            }
+        }
         
     }
     

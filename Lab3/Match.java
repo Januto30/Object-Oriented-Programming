@@ -34,14 +34,16 @@ public class Match {
         return awayScorers;
     }
 
+
     public Match (Team homeTeam, Team awayTeam) {
         this.homeTeam = homeTeam;
         this.awayTeam = awayTeam;
         this.homeScorers = new LinkedList<>();
         this.awayScorers = new LinkedList<>();
     }
+    
 
-    public void simulateMatch() {                   // Afegir llista de jugadors que fan assistencia
+    public void simulateMatch() {
         Random random = new Random();
         this.homeGoals = random.nextInt(4);
         this.awayGoals = random.nextInt(4);
@@ -49,15 +51,33 @@ public class Match {
         List<Player> homePlayers = homeTeam.getPlayers();
         List<Player> awayPlayers = awayTeam.getPlayers();
 
-        for (int i = 0; i < homeGoals; i++) {
+        for (int i = 0; i < homeGoals; i++) {          // Hem de tenir en compte que el porter no pot fer gols !!!!!
             Player scorer = homePlayers.get(random.nextInt(homePlayers.size()));
             homeScorers.add(scorer);
+
+            /*  Això encara no importa       // També haurem de tenir en compte que es porter no pot fer assistències. I que si en un partit, l'equip Away ha fet 3 gols, tots tres per un mateix jugador, aquest no pot haver fet assistències.
+             * Player assistant = homePlayers.get(random.nextInt(homePlayers.size()));
+            while (assistant.equals(scorer)) {
+                assistant = homePlayers.get(random.nextInt(homePlayers.size()));
+
+            }
+            homeAssists.add(assistant);
+            */
             
         }
 
-        for (int i = 0; i < awayGoals; i++) {
+        for (int i = 0; i < awayGoals; i++) {       // Hem de tenir en compte que el porter no pot fer gols !!!!!!1
             Player scorer = awayPlayers.get(random.nextInt(awayPlayers.size()));
             awayScorers.add(scorer);
+
+            /*  Això encara no importa
+            Player assistant = awayPlayers.get(random.nextInt(awayPlayers.size()));
+            while (assistant.equals(scorer)) {
+                assistant = awayPlayers.get(random.nextInt(awayPlayers.size()));
+
+            }
+            awayAssists.add(assistant);
+            */
 
         }
 

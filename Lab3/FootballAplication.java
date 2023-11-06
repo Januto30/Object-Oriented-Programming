@@ -9,42 +9,44 @@ public class FootballAplication {
         Country croacia = new Country("Croacia");
         Country portugal = new Country("Portugal");
         Country germany = new Country("Alemanya");
+        Country norway = new Country("Noruega");
 
         // JUGADORS:
-        Player player1 = new Player(false, "Lionel Messi", 36, argentina);
-        Player player2 = new Player(false, "Neymar", 23, brasil);
-        Player player3 = new Player(false, "Luis Suarez", 28, uruguay);
-        Player player4 = new Player(false, "Rakitic", 27, croacia);
-        Player player5 = new Player(false, "Pique", 28, spain);
-        Player player6 = new Player(false, "Iniesta", 31, spain);
-        Player player7 = new Player(false, "Ter Stegen", 23, spain);
+        Outfielder player1 = new Outfielder(false, "Lionel Messi", 36, argentina);
+        Outfielder player2 = new Outfielder(false, "Neymar", 23, brasil);
+        Outfielder player3 = new Outfielder(false, "Luis Suarez", 28, uruguay);
+        Outfielder player4 = new Outfielder(false, "Rakitic", 27, croacia);
+        Outfielder player5 = new Outfielder(false, "Pique", 28, spain);
+        Outfielder player6 = new Outfielder(false, "Iniesta", 31, spain);
+        Goalkeeper player7 = new Goalkeeper(false, "Ter Stegen", 23, germany);
 
-        Player player8 = new Player(false, "Sergio Ramos" , 31, spain);
-        Player player9 = new Player(false, "Cristiano Ronaldo", 32, portugal);
-        Player player10 = new Player(false, "Vinicius", 23, brasil);
-        Player player11 = new Player(false, "Fede Valverde", 25, uruguay);
-        Player player12 = new Player(false, "Modric", 32, croacia);
-        Player player13 = new Player(false, "Kroos", 27, germany);
-        Player player14 = new Player(false, "Casillas", 29, spain);
+        Outfielder player8 = new Outfielder(false, "Sergio Ramos" , 31, spain);
+        Outfielder player9 = new Outfielder(false, "Cristiano Ronaldo", 32, portugal);
+        Outfielder player10 = new Outfielder(false, "Vinicius", 23, brasil);
+        Outfielder player11 = new Outfielder(false, "Fede Valverde", 25, uruguay);
+        Outfielder player12 = new Outfielder(false, "Modric", 32, croacia);
+        Outfielder player13 = new Outfielder(false, "Kroos", 27, germany);
+        Goalkeeper player14 = new Goalkeeper(false, "Casillas", 29, spain);
 
-        Player player15 = new Player(false, "Jesus Navas" , 31, spain);
-        Player player16 = new Player(false, "Bade", 32, portugal);
-        Player player17 = new Player(false, "Acuña", 25, argentina);
-        Player player18 = new Player(false, "Sergio Rico" , 31, spain);
+        Outfielder player15 = new Outfielder(false, "Jesus Navas" , 31, spain);
+        Outfielder player16 = new Outfielder(false, "Bade", 32, portugal);
+        Outfielder player17 = new Outfielder(false, "Acuña", 25, argentina);
+        Goalkeeper player18 = new Goalkeeper(false, "Sergio Rico" , 31, spain);
 
-        Player player19 = new Player(false, "Gaya", 32, spain);
-        Player player20 = new Player(false, "Paulista", 23, brasil);
-        Player player21 = new Player(false, "Cavani", 25, uruguay);
-        Player player22 = new Player(false, "Santiago Cañizares" , 31, spain);
+        Outfielder player19 = new Outfielder(false, "Gaya", 32, spain);
+        Outfielder player20 = new Outfielder(false, "Paulista", 23, brasil);
+        Outfielder player21 = new Outfielder(false, "Cavani", 25, uruguay);
+        Goalkeeper player22 = new Goalkeeper(false, "Diego Alves" , 28, brasil);
 
-        Player player23 = new Player(true, "Mariona", 32, spain);
-        Player player24 = new Player(true, "Alexia", 23, spain);
-        Player player25 = new Player(true, "Aitana", 25, spain);
-        Player player26 = new Player(true, "Cata Coll" , 31, spain);
+        Outfielder player23 = new Outfielder(true, "Mariona", 32, spain);
+        Outfielder player24 = new Outfielder(true, "Alexia", 23, spain);
+        Outfielder player25 = new Outfielder(true, "Aitana", 25, spain);
+        Outfielder player30 = new Outfielder(true, "Engen", 25, norway);
+        Goalkeeper player26 = new Goalkeeper(true, "Cata Coll" , 31, spain);
 
-        Player player27 = new Player(false, "Cavani", 36, uruguay);
-        Player player28 = new Player(false, "Marcos Rojo", 36, argentina);
-        Player player29 = new Player(false, "Sergio Romero", 36, argentina);
+        Outfielder player27 = new Outfielder(false, "Cavani", 36, uruguay);
+        Outfielder player28 = new Outfielder(false, "Marcos Rojo", 36, argentina);
+        Goalkeeper player29 = new Goalkeeper(false, "Sergio Romero", 36, argentina);
 
 
         // EQUIPS:
@@ -54,6 +56,9 @@ public class FootballAplication {
         Team valencia = new Team("Valencia", spain, Team.GENDER.MALE);
         Team barcelonaFem = new Team("Barcelona Femeni", spain, Team.GENDER.FEMALE);
         Team boca = new Team("Boca Juniors", argentina, Team.GENDER.MALE);
+
+        NationalTeam espanya = new NationalTeam("Espanya", spain, Team.GENDER.MALE);
+        NationalTeam espanyaFem = new NationalTeam("Espanya", spain, Team.GENDER.FEMALE);
 
         barcelona.addPlayer(player1);
         barcelona.addPlayer(player2);
@@ -91,7 +96,24 @@ public class FootballAplication {
         boca.addPlayer(player28);
         boca.addPlayer(player29);
 
-        // LLIGUES:
+        espanya.addPlayer(player1);         // Ha de sortir malament
+        espanya.addPlayer(player23);        // ha de sortir malament
+        espanya.addPlayer(player5);
+        espanya.addPlayer(player6);
+        espanya.addPlayer(player8);
+        espanya.addPlayer(player14);
+
+        espanyaFem.addPlayer(player29);     // Ha de sortir malament
+        espanyaFem.addPlayer(player9);     // Ha de sortir malament
+        espanyaFem.addPlayer(player30);     // Ha de sortir malament
+        espanyaFem.addPlayer(player23);
+        espanyaFem.addPlayer(player24);
+        espanyaFem.addPlayer(player25);
+        espanyaFem.addPlayer(player26);
+
+
+        // COMPETTIONS:
+        // Leagues:
         League laLiga = new League("La Liga", spain, League.GENDER.MALE);
         League laLigaFem = new League("La Liga Femenina", spain, League.GENDER.FEMALE);
         League LPF = new League("Liga Profesional de Argentina", argentina, League.GENDER.MALE);
@@ -106,8 +128,14 @@ public class FootballAplication {
 
         LPF.addTeam(valencia);              // Ha de sortir malament
         LPF.addTeam(boca);
+        
 
-        // COMPROVACIONS:
+        // Cup:
+
+        // GrouPlay:
+
+
+        /* COMPROVACIONS:
         barcelona.printTeam();
         realMadrid.printTeam();
         sevilla.printTeam();
@@ -127,6 +155,7 @@ public class FootballAplication {
         player10.printStats();
         player15.printStats();
         player20.printStats();
+        */
 
 
         System.out.println();

@@ -4,12 +4,6 @@ public class Player {
     protected int age;
     protected Country country;
     protected int numMatches;
-    
-    // private int numTackles;
-    // private int numPasses;
-    // private int numShots;
-    // private int numAssists;
-    // private int numGoals;
 
     public Player (boolean g, String name, int age, Country nac) {
         this.gender = g;
@@ -55,13 +49,7 @@ public class Player {
         
     }
 
-    /*
-     * public void update(int tackles, int passes, int shots, int assists, int goals) {
-        this.numMatches += 1;
-        
-    }
-    */
-
+    /*                          JA NO IMPORTA
     public void printStats() {
         System.out.println("______________________________________________");
         System.out.println("|PLAYER STATS");
@@ -86,4 +74,5 @@ public class Player {
         System.out.println("|_____________________________________________");
         System.out.println("");
     }
+    */
 }
