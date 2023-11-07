@@ -4,7 +4,7 @@ public class GroupPlay extends Competition {
     private int numGroups;
     private LinkedList<League> ListLeagues;
 
-    public GroupPlay (String name, Country country, GENDER gender) {
+    public GroupPlay (boolean clubs, String name, Country country, GENDER gender) {
         super(false, name, country, gender);
     }
 

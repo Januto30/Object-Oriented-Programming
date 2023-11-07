@@ -39,61 +39,63 @@ public class Competition {
     }
 
     public void addTeam(Team team) {
+        boolean validTeam = true;
         boolean validTeamNat = true;
         boolean validTeamGen = true;
 
+        if (this.clubs && !(team instanceof NationalTeam)) {
+            validTeam = false;
+
+        } else if (!this.clubs && team instanceof NationalTeam) {
+            validTeam = false;
+
+        } 
+
+        if (team.getCountry() != this.country) {
+            validTeamNat = false;
+
+        }
+
         if (team instanceof NationalTeam) {
-            int size = teamList.size();
-
-            for (int i = 0; i < size; i++) {
-                if (teamList.get(i).getName().equals(team.getName())) {
-                    validTeamNat = false;
-
+            for (Team t : teamList) {
+                if (t.getName().equals(team.getName())) {
+                    validTeam = false;                   // Per verificar que 
+                    break;
+                
                 }
             }
+        }
 
-            if (this.gender == GENDER.MIXED) {
-                validTeamGen = true;
-
-            } else if (this.gender == GENDER.FEMALE && team.getGender() == Team.GENDER.FEMALE) {
-                validTeamGen = true;
-
-            } else if (this.gender == GENDER.MALE && team.getGender() == Team.GENDER.MALE) {
-                validTeamGen = true;
-
-            } else {
-                validTeamGen = false;
-
-            } if (validTeamGen == validTeamNat){
-                teamList.add(team);
-
-            } else {
-                System.out.println("-> L'equip " + team.getName() + " no pot ser afegit a aquesta competició perque no concorden els generes o la nacionalitat.");
-            }
+        if (this.gender == GENDER.MIXED) {
+            validTeamGen = true;
         
-        
+        } else if (this.gender == GENDER.FEMALE && team.getGender() == Team.GENDER.FEMALE) {
+            validTeamGen = true;
+
+        } else if (this.gender == GENDER.MALE && team.getGender() == Team.GENDER.MALE) {
+            validTeamGen = true;
+
         } else {
-            if (this.gender == GENDER.MIXED) {
-                validTeamGen = true;
-            
-            } else if (this.gender == GENDER.FEMALE && team.getGender() == Team.GENDER.FEMALE) {
-                validTeamGen = true;
+            validTeamGen = false;
 
-            } else if (this.gender == GENDER.MALE && team.getGender() == Team.GENDER.MALE) {
-                validTeamGen = true;
+        }
 
-            } else {
-                validTeamGen = false;
-
-            }
-        } 
-        
-        if (validTeamGen == validTeamNat){
+        System.out.println("");
+        if (validTeamGen && validTeamNat && validTeam) {
             teamList.add(team);
-
+            System.out.println("- S'ha afegit l'equip " + team.getName() + " a la competició " + this.name + ".");
+        
         } else {
-            System.out.println("-> L'equip " + team.getName() + " no pot ser afegit a aquesta competició perque no concorden els generes o la nacionalitat.");
+            if (!validTeamGen) {
+                System.out.println("-> L'equip " + team.getName() + " no pot ser afegit a la competició " + this.name + " perquè no concorden els gèneres.");
+            
+            } else if (!validTeamNat) {
+                System.out.println("-> L'equip " + team.getName() + " no pot ser afegit a la competició " + this.name + " perquè no concorden les nacionalitats.");
+            
+            } else if (!validTeam) {
+                System.out.println("-> L'equip " + team.getName() + " no pot ser afegit a la competició " + this.name + ".");
 
+            }
         }
     }
 

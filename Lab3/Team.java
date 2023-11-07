@@ -60,37 +60,44 @@ public class Team {
         return playerList;
     }
 
+
     public void addPlayer(Player p) {
         boolean gen_equip;
         if (this.gender == GENDER.FEMALE) {
             gen_equip = true;
+
         } else {
             gen_equip = false;
+
         }
 
         if (this.gender == GENDER.MIXED) {
             playerList.add(p);
-
             if (p.getGender() == true) {
-                System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
+                //System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip: " + this.name + ".");
+
             } else {
-                System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
+                //System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip: " + this.name + ".");
 
             }
 
         } else if (gen_equip == p.getGender()) {
             this.playerList.add(p);            
             if (p.getGender() == true) {
-                System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip del " + this.name + ".");
+                //System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip: " + this.name + ".");
+
             } else {
-                System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip del " + this.name + ".");
+                //ystem.out.println("- S'ha assignat el jugador " + p.getName() + " al equip: " + this.name + ".");
+            
             }
             
         } else {
             if (p.getGender() == true) {
-                System.out.println("-> La jugadora " + p.getName() +  " no se la pot assignar per raons de gènere al equip " + this.name +".");
+                System.out.println("-> La jugadora " + p.getName() +  " no se la pot assignar per raons de gènere al equip: " + this.name +".");
+
             } else {
-                System.out.println("-> El jugador " + p.getName() +  " no se'l pot assignar per raons de gènere al equip " + this.name + ".");
+                System.out.println("-> El jugador " + p.getName() +  " no se'l pot assignar per raons de gènere al equip: " + this.name + ".");
+            
             }
         }
 
@@ -212,4 +219,17 @@ public class Team {
 
     ------------------------------------------------------------------------------------------
     */
+
+    public void printTeam() {
+        System.out.println(" ");
+        System.out.println("________________");
+        System.out.println("|"+ name);
+        System.out.println("|---------------");
+
+        for (Player player : playerList) {
+            System.out.println("|- "+ player.getName());
+        }
+        System.out.println("----------------");
+        System.out.println(" ");
+    }
 }

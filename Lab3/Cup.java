@@ -5,7 +5,7 @@ public class Cup extends Competition {
     private LinkedList<Team> listTeam;
     private LinkedList<Match> listMatch;
 
-    public Cup(String name, Country country, GENDER gender) {
+    public Cup(boolean clubs, String name, Country country, GENDER gender) {
         super(false, name, country, gender);
 
     }

@@ -54,11 +54,11 @@ public class FootballAplication {
         Team realMadrid = new Team("Real Madrid", spain, Team.GENDER.MALE);
         Team sevilla = new Team("SevillaFC", spain, Team.GENDER.MALE);
         Team valencia = new Team("Valencia", spain, Team.GENDER.MALE);
-        Team barcelonaFem = new Team("Barcelona Femeni", spain, Team.GENDER.FEMALE);
+        Team barcelonaFem = new Team("Barcelona Femení", spain, Team.GENDER.FEMALE);
         Team boca = new Team("Boca Juniors", argentina, Team.GENDER.MALE);
 
         NationalTeam espanya = new NationalTeam("Espanya", spain, Team.GENDER.MALE);
-        NationalTeam espanyaFem = new NationalTeam("Espanya", spain, Team.GENDER.FEMALE);
+        NationalTeam espanyaFem = new NationalTeam("Espanya Femení", spain, Team.GENDER.FEMALE);
 
         barcelona.addPlayer(player1);
         barcelona.addPlayer(player2);
@@ -91,48 +91,53 @@ public class FootballAplication {
         barcelonaFem.addPlayer(player24);
         barcelonaFem.addPlayer(player25);
         barcelonaFem.addPlayer(player26);
+        barcelonaFem.addPlayer(player30);
 
         boca.addPlayer(player27);
         boca.addPlayer(player28);
         boca.addPlayer(player29);
 
-        espanya.addPlayer(player1);         // Ha de sortir malament (nacionalitat) - No funciona
-        espanya.addPlayer(player23);        // ha de sortir malament (genere) - Surt dues vegades
-        espanya.addPlayer(player5);         // Surten dues vegades
+        espanya.addPlayer(player1);         // Ha de sortir malament (nacionalitat)
+        espanya.addPlayer(player23);        // ha de sortir malament (genere)
+        espanya.addPlayer(player5);
         espanya.addPlayer(player6);
         espanya.addPlayer(player8);
         espanya.addPlayer(player14);
 
-        espanyaFem.addPlayer(player29);     // Ha de sortir malament (genere)
-        espanyaFem.addPlayer(player9);     // Ha de sortir malament (genere)
-        espanyaFem.addPlayer(player30);     // Ha de sortir malament (pais) - No funciona
-        espanyaFem.addPlayer(player23);     // Surten repetides (2 vegades)
+        espanyaFem.addPlayer(player29);     // Ha de sortir malament (nacionalitat)
+        espanyaFem.addPlayer(player8);     // Ha de sortir malament (genere)
+        espanyaFem.addPlayer(player30);     // Ha de sortir malament (nacionalitat)
+        espanyaFem.addPlayer(player23);
         espanyaFem.addPlayer(player24);
         espanyaFem.addPlayer(player25);
         espanyaFem.addPlayer(player26);
 
 
-        // COMPETTIONS:
+        // COMPETITIONS:
         // Leagues:
-        League laLiga = new League("La Liga", spain, League.GENDER.MALE);
-        League laLigaFem = new League("La Liga Femenina", spain, League.GENDER.FEMALE);
-        League LPF = new League("Liga Profesional de Argentina", argentina, League.GENDER.MALE);
+        League laLiga = new League(true, "La Liga", spain, League.GENDER.MALE);
+        League laLigaFem = new League(true, "La Liga Femenina", spain, League.GENDER.FEMALE);
+        League LPF = new League(true, "Liga Profesional de Argentina", argentina, League.GENDER.MALE);
 
         laLiga.addTeam(barcelona);
         laLiga.addTeam(realMadrid);
         laLiga.addTeam(sevilla);
         laLiga.addTeam(valencia);
+        laLiga.addTeam(boca);               // Ha de sortir malament (nacionalitat)
+        laLiga.addTeam(espanya);             // Ha de sortir malament (no és un club)
 
-        laLigaFem.addTeam(realMadrid);      // Ha de sortir malament (genere) - Posa genere/nacionalitat
         laLigaFem.addTeam(barcelonaFem);
+        laLigaFem.addTeam(realMadrid);      // Ha de sortir malament (genere)
+        laLigaFem.addTeam(espanyaFem);      // ha de sortir malament (no és un club)
 
-        LPF.addTeam(sevilla);              // Ha de sortir malament - No funciona
         LPF.addTeam(boca);
+        LPF.addTeam(sevilla);              // Ha de sortir malament
         
 
         // Cup:
 
-        // GrouPlay:
+        // GroupPlay:
+
 
 
         /* COMPROVACIONS:
@@ -140,6 +145,10 @@ public class FootballAplication {
         realMadrid.printTeam();
         sevilla.printTeam();
         valencia.printTeam();
+        boca.printTeam();
+        barcelonaFem.printTeam();
+        espanya.printTeam();
+        espanyaFem.printTeam();
 
         laLiga.generateMatches();
         laLiga.simulateMatches();
