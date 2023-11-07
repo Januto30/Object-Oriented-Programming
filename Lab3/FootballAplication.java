@@ -86,7 +86,7 @@ public class FootballAplication {
         valencia.addPlayer(player21);
         valencia.addPlayer(player22);
 
-        barcelonaFem.addPlayer(player1);    // Ha de sortir malament
+        barcelonaFem.addPlayer(player1);    // Ha de sortir malament (genere)
         barcelonaFem.addPlayer(player23);
         barcelonaFem.addPlayer(player24);
         barcelonaFem.addPlayer(player25);
@@ -96,17 +96,17 @@ public class FootballAplication {
         boca.addPlayer(player28);
         boca.addPlayer(player29);
 
-        espanya.addPlayer(player1);         // Ha de sortir malament
-        espanya.addPlayer(player23);        // ha de sortir malament
-        espanya.addPlayer(player5);
+        espanya.addPlayer(player1);         // Ha de sortir malament (nacionalitat) - No funciona
+        espanya.addPlayer(player23);        // ha de sortir malament (genere) - Surt dues vegades
+        espanya.addPlayer(player5);         // Surten dues vegades
         espanya.addPlayer(player6);
         espanya.addPlayer(player8);
         espanya.addPlayer(player14);
 
-        espanyaFem.addPlayer(player29);     // Ha de sortir malament
-        espanyaFem.addPlayer(player9);     // Ha de sortir malament
-        espanyaFem.addPlayer(player30);     // Ha de sortir malament
-        espanyaFem.addPlayer(player23);
+        espanyaFem.addPlayer(player29);     // Ha de sortir malament (genere)
+        espanyaFem.addPlayer(player9);     // Ha de sortir malament (genere)
+        espanyaFem.addPlayer(player30);     // Ha de sortir malament (pais) - No funciona
+        espanyaFem.addPlayer(player23);     // Surten repetides (2 vegades)
         espanyaFem.addPlayer(player24);
         espanyaFem.addPlayer(player25);
         espanyaFem.addPlayer(player26);
@@ -123,10 +123,10 @@ public class FootballAplication {
         laLiga.addTeam(sevilla);
         laLiga.addTeam(valencia);
 
-        laLigaFem.addTeam(realMadrid);      // Ha de sortir malament
+        laLigaFem.addTeam(realMadrid);      // Ha de sortir malament (genere) - Posa genere/nacionalitat
         laLigaFem.addTeam(barcelonaFem);
 
-        LPF.addTeam(valencia);              // Ha de sortir malament
+        LPF.addTeam(sevilla);              // Ha de sortir malament - No funciona
         LPF.addTeam(boca);
         
 
