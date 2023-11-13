@@ -1,0 +1,25 @@
+Rúbrica de puntuación
+1) Implementación de la clase Match, incluyendo métodos para simular el marcador y goles: 2pt
+2) Implementación de la clase League y el método para añdir equipos: 1pt
+3) Implementación del método para generar los partidos de una liga y simular todos: 2pt
+4) Implementación del método para actualizar las estadísticas del grupo y del jugador: 2pt
+5) Implementación del main y verificación del funcionamiento de todos los métodos de cada clase: 2pt
+-------------------
+Total code: 9pt
+6) Documentation 1pt
+
+Puntuación
+1)-> 2
+2)-> 1
+3)-> 2
+4)-> 1
+5)-> 2
+6)-> 0,9
+
+Nota final 8,9 
+
+Observaciones:
+El documento falta comentar los conceptos teóricos implmentados en el laboratorio.
+La actualización de las estadísticas del player debería recibir un match y actualizar las
+estadísticas en base a esta información.
+
