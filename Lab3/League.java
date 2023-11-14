@@ -21,7 +21,6 @@ public class League extends Competition {
         }
     }
 
-    /*
     public void printTable() {
         System.out.println(" ");
         System.out.println("Classificació de la lliga:");
@@ -43,5 +42,4 @@ public class League extends Competition {
                     "\t\t" + team.getNumTies() + "\t\t" + team.getNumLosses());
         }
     }
-    */
 }

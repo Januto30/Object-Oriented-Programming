@@ -1,4 +1,3 @@
-
 public class FootballAplication {
     public static void main(String[] args) {
         // COUNTRYS:
@@ -12,6 +11,8 @@ public class FootballAplication {
         Country norway = new Country("Noruega");
 
         // JUGADORS:
+        System.out.println("");
+        System.out.println("------------------------------------------------ PLAYERS -----------------------------------------------------");
         Outfielder player1 = new Outfielder(false, "Lionel Messi", 36, argentina);
         Outfielder player2 = new Outfielder(false, "Neymar", 23, brasil);
         Outfielder player3 = new Outfielder(false, "Luis Suarez", 28, uruguay);
@@ -50,6 +51,8 @@ public class FootballAplication {
 
 
         // EQUIPS:
+        System.out.println("");
+        System.out.println("------------------------------------------------ TEAMS -----------------------------------------------------");
         Team barcelona = new Team("Barcelona", spain, Team.GENDER.MALE);
         Team realMadrid = new Team("Real Madrid", spain, Team.GENDER.MALE);
         Team sevilla = new Team("SevillaFC", spain, Team.GENDER.MALE);
@@ -115,6 +118,8 @@ public class FootballAplication {
 
         // COMPETITIONS:
         // Leagues:
+        System.out.println("");
+        System.out.println("------------------------------------------------ LEAGUE -----------------------------------------------------");
         League laLiga = new League(true, "La Liga", spain, League.GENDER.MALE);
         League laLigaFem = new League(true, "La Liga Femenina", spain, League.GENDER.FEMALE);
         League LPF = new League(true, "Liga Profesional de Argentina", argentina, League.GENDER.MALE);
@@ -132,39 +137,48 @@ public class FootballAplication {
 
         LPF.addTeam(boca);
         LPF.addTeam(sevilla);              // Ha de sortir malament
-        
-
-        // Cup:
-
-        // GroupPlay:
-
-
-
-        /* COMPROVACIONS:
-        barcelona.printTeam();
-        realMadrid.printTeam();
-        sevilla.printTeam();
-        valencia.printTeam();
-        boca.printTeam();
-        barcelonaFem.printTeam();
-        espanya.printTeam();
-        espanyaFem.printTeam();
 
         laLiga.generateMatches();
         laLiga.simulateMatches();
         laLiga.printMatches();
+        laLiga.printTable();
+        
 
-        barcelona.printStats();
-        realMadrid.printStats();
-        sevilla.printStats();
-        valencia.printStats();
+        // Cup:
+        System.out.println("");
+        System.out.println("------------------------------------------------ CUP -----------------------------------------------------");
+        Cup kingsCup = new Cup(true, "Copa del Rei", spain, Cup.GENDER.MALE);
+        Cup queensCup = new Cup(true, "Copa de la Reina", spain, Cup.GENDER.FEMALE);
 
-        player1.printStats();
-        player3.printStats();
-        player10.printStats();
-        player15.printStats();
-        player20.printStats();
-        */
+        kingsCup.addTeam(barcelona);
+        kingsCup.addTeam(realMadrid);
+        kingsCup.addTeam(sevilla);
+        kingsCup.addTeam(valencia);
+        kingsCup.addTeam(barcelonaFem);     // Ha de sortir malament (genere)
+        kingsCup.addTeam(espanya);          // Ha de sortir malament (no és un club)
+        kingsCup.addTeam(boca);             // Ha de sortir malament (nacionalitat)
+
+        queensCup.addTeam(barcelonaFem);
+        queensCup.addTeam(espanyaFem);      // Ha de sortir malament (no és un club)
+
+        kingsCup.generateMatches();
+        kingsCup.simulateMatches();
+        kingsCup.printMatches();
+
+
+        // GroupPlay:
+        System.out.println("");
+        System.out.println("------------------------------------------------ GROUP PLAY -----------------------------------------------------");
+        GroupPlay champions = new GroupPlay(true, "Champions League", spain, GroupPlay.GENDER.MALE);
+
+        champions.addTeam(barcelona);
+        champions.addTeam(realMadrid);
+        champions.addTeam(sevilla);
+        champions.addTeam(valencia);
+
+        champions.generateMatches();
+        champions.simulateMatches();
+        champions.printMatches();
 
 
         System.out.println();

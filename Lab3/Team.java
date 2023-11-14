@@ -74,20 +74,20 @@ public class Team {
         if (this.gender == GENDER.MIXED) {
             playerList.add(p);
             if (p.getGender() == true) {
-                //System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip: " + this.name + ".");
+                System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip: " + this.name + ".");
 
             } else {
-                //System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip: " + this.name + ".");
+                System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip: " + this.name + ".");
 
             }
 
         } else if (gen_equip == p.getGender()) {
             this.playerList.add(p);            
             if (p.getGender() == true) {
-                //System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip: " + this.name + ".");
+                System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip: " + this.name + ".");
 
             } else {
-                //ystem.out.println("- S'ha assignat el jugador " + p.getName() + " al equip: " + this.name + ".");
+                System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip: " + this.name + ".");
             
             }
             
@@ -111,7 +111,7 @@ public class Team {
     }
 
 
-    public void updateStats(Match match) {              // Revisar si esta be s'update de Team (ja que s'ha canviat updateStats de Player)
+    public void updateStats(Match match) {
         this.numMatches++;
 
         if (match.getHomeTeam() == this) {
@@ -136,7 +136,7 @@ public class Team {
                     if (scorer == player) {
                         goalsScored++;
 
-                    }   // Player scorer : match.getHomeScorers()
+                    }
                 } 
                 player.updateStats(match); 
             }
@@ -219,17 +219,4 @@ public class Team {
 
     ------------------------------------------------------------------------------------------
     */
-
-    public void printTeam() {
-        System.out.println(" ");
-        System.out.println("________________");
-        System.out.println("|"+ name);
-        System.out.println("|---------------");
-
-        for (Player player : playerList) {
-            System.out.println("|- "+ player.getName());
-        }
-        System.out.println("----------------");
-        System.out.println(" ");
-    }
 }

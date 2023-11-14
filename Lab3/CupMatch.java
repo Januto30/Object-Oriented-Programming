@@ -25,11 +25,21 @@ public class CupMatch extends Match {
 
         for (int i = 0; i < homeGoals; i++) {
             Player scorer = homePlayers.get(random.nextInt(homePlayers.size()));
+            
+            while (!(scorer instanceof Outfielder)) {
+                scorer = homePlayers.get(random.nextInt(homePlayers.size()));
+            
+            }
             homeScorers.add(scorer);
         }
 
         for (int i = 0; i < awayGoals; i++) {
             Player scorer = awayPlayers.get(random.nextInt(awayPlayers.size()));
+            
+            while (!(scorer instanceof Outfielder)) {
+                scorer = awayPlayers.get(random.nextInt(awayPlayers.size()));
+            
+            }
             awayScorers.add(scorer);
         }
     }

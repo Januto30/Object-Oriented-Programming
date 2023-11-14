@@ -51,11 +51,16 @@ public class Match {
         List<Player> homePlayers = homeTeam.getPlayers();
         List<Player> awayPlayers = awayTeam.getPlayers();
 
-        for (int i = 0; i < homeGoals; i++) {          // Hem de tenir en compte que el porter no pot fer gols !!!!!
+        for (int i = 0; i < homeGoals; i++) {
             Player scorer = homePlayers.get(random.nextInt(homePlayers.size()));
+            
+            while (!(scorer instanceof Outfielder)) {
+                scorer = homePlayers.get(random.nextInt(homePlayers.size()));
+            
+            }
             homeScorers.add(scorer);
 
-            /*  Això encara no importa       // També haurem de tenir en compte que es porter no pot fer assistències. I que si en un partit, l'equip Away ha fet 3 gols, tots tres per un mateix jugador, aquest no pot haver fet assistències.
+            /*  Això encara no importa       // Si en un partit, l'equip Away ha fet 3 gols, tots tres per un mateix jugador, aquest no pot haver fet assistències.
              * Player assistant = homePlayers.get(random.nextInt(homePlayers.size()));
             while (assistant.equals(scorer)) {
                 assistant = homePlayers.get(random.nextInt(homePlayers.size()));
@@ -66,8 +71,13 @@ public class Match {
             
         }
 
-        for (int i = 0; i < awayGoals; i++) {       // Hem de tenir en compte que el porter no pot fer gols !!!!!!1
+        for (int i = 0; i < awayGoals; i++) {
             Player scorer = awayPlayers.get(random.nextInt(awayPlayers.size()));
+            
+            while (!(scorer instanceof Outfielder)) {
+                scorer = awayPlayers.get(random.nextInt(awayPlayers.size()));
+            
+            }
             awayScorers.add(scorer);
 
             /*  Això encara no importa
