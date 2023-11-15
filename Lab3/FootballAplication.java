@@ -1,3 +1,4 @@
+import java.util.List;
 public class FootballAplication {
     public static void main(String[] args) {
         // COUNTRYS:
@@ -115,7 +116,7 @@ public class FootballAplication {
         espanyaFem.addPlayer(player25);
         espanyaFem.addPlayer(player26);
 
-
+        /*
         // COMPETITIONS:
         // Leagues:
         System.out.println("");
@@ -142,7 +143,7 @@ public class FootballAplication {
         laLiga.simulateMatches();
         laLiga.printMatches();
         laLiga.printTable();
-        
+        */
 
         // Cup:
         System.out.println("");
@@ -160,12 +161,12 @@ public class FootballAplication {
 
         queensCup.addTeam(barcelonaFem);
         queensCup.addTeam(espanyaFem);      // Ha de sortir malament (no és un club)
-
+        
         kingsCup.generateMatches();
         kingsCup.simulateMatches();
         kingsCup.printMatches();
 
-
+        /*
         // GroupPlay:
         System.out.println("");
         System.out.println("------------------------------------------------ GROUP PLAY -----------------------------------------------------");
@@ -182,7 +183,7 @@ public class FootballAplication {
 
 
         System.out.println();
-
+        */
 
         
     }

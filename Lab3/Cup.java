@@ -35,6 +35,7 @@ public class Cup extends Competition {
 
     @Override
     public void generateMatches() {
+        teamList=listTeam;
         int size = listTeam.size();
         Collections.shuffle(listTeam);
         listTeam.removeIf(team -> team == null);
@@ -45,33 +46,41 @@ public class Cup extends Competition {
             CupMatch cupMatch = new CupMatch(team1, team2);
             listMatch.add(cupMatch);
         }
-    }
 
-    /*
-    @Override                               // NO FUNCIONA, s'ha d'utilitzar el mètode simulateMatch() de CupMatch
+    }
+    /* 
+    @Override
     public void simulateMatches() {
         LinkedList<CupMatch> roundMatches = new LinkedList<>(listMatch);
-
+    
         while (roundMatches.size() > 1) {
             LinkedList<CupMatch> nextRoundMatches = new LinkedList<>();
-
+    
             for (int i = 0; i < roundMatches.size(); i = i + 2) {
                 CupMatch match1 = roundMatches.get(i);
                 CupMatch match2 = roundMatches.get(i + 1);
-                CupMatch nextRoundMatch = new CupMatch ((match1.getHomeGoals() > match1.getAwayGoals()) ? match1.getHomeTeam() : match1.getAwayTeam(), (match2.getHomeGoals() > match2.getAwayGoals()) ? match2.getHomeTeam() : match2.getAwayTeam());
+    
+                // Modifica la lògica per tenir en compte els empats
+                Team winner1 = (match1.getHomeGoals() > match1.getAwayGoals()) ? match1.getHomeTeam() :
+                                (match1.getHomeGoals() < match1.getAwayGoals()) ? match1.getAwayTeam() : null;
+    
+                Team winner2 = (match2.getHomeGoals() > match2.getAwayGoals()) ? match2.getHomeTeam() :
+                                (match2.getHomeGoals() < match2.getAwayGoals()) ? match2.getAwayTeam() : null;
+    
+                CupMatch nextRoundMatch = new CupMatch(winner1, winner2);
                 nextRoundMatches.add(nextRoundMatch);
             }
-
+    
             matchRounds.add(roundMatches);
             roundMatches = nextRoundMatches;
-
         }
-
+    
+        // Afegir el partit final en lloc de la llista
         listMatch.addAll(roundMatches);
     }
     */
-
-    @Override                           // NO FUNCIONA, crec que ha de ser com adalt però usant simulateMatch() de CupMatch
+    
+    @Override            // NO FUNCIONA, crec que ha de ser com adalt però usant simulateMatch() de CupMatch
     public void simulateMatches() {
         for (CupMatch cupMatch : listMatch) {
             cupMatch.simulateMatch();
@@ -89,14 +98,14 @@ public class Cup extends Competition {
             }
         }
     }
-
+        
     @Override
     public void printMatches() {
+        System.out.println(" ");
         for (CupMatch cupMatch : listMatch) {
-            System.out.println(" ");
             cupMatch.printMatch();
-            System.out.println(" ");
         }
+
     }
     
     /*
