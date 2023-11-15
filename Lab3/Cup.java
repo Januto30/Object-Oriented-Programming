@@ -60,7 +60,6 @@ public class Cup extends Competition {
                 CupMatch match1 = roundMatches.get(i);
                 CupMatch match2 = roundMatches.get(i + 1);
     
-                // Modifica la lògica per tenir en compte els empats
                 Team winner1 = (match1.getHomeGoals() > match1.getAwayGoals()) ? match1.getHomeTeam() :
                                 (match1.getHomeGoals() < match1.getAwayGoals()) ? match1.getAwayTeam() : null;
     
@@ -75,12 +74,11 @@ public class Cup extends Competition {
             roundMatches = nextRoundMatches;
         }
     
-        // Afegir el partit final en lloc de la llista
         listMatch.addAll(roundMatches);
     }
     */
     
-    @Override            // NO FUNCIONA, crec que ha de ser com adalt però usant simulateMatch() de CupMatch
+    @Override
     public void simulateMatches() {
         for (CupMatch cupMatch : listMatch) {
             cupMatch.simulateMatch();
@@ -101,9 +99,10 @@ public class Cup extends Competition {
         
     @Override
     public void printMatches() {
-        System.out.println(" ");
         for (CupMatch cupMatch : listMatch) {
+            System.out.println(" ");
             cupMatch.printMatch();
+            System.out.println(" ");
         }
 
     }

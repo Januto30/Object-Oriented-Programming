@@ -116,7 +116,6 @@ public class FootballAplication {
         espanyaFem.addPlayer(player25);
         espanyaFem.addPlayer(player26);
 
-        /*
         // COMPETITIONS:
         // Leagues:
         System.out.println("");
@@ -143,7 +142,6 @@ public class FootballAplication {
         laLiga.simulateMatches();
         laLiga.printMatches();
         laLiga.printTable();
-        */
 
         // Cup:
         System.out.println("");
@@ -166,7 +164,6 @@ public class FootballAplication {
         kingsCup.simulateMatches();
         kingsCup.printMatches();
 
-        /*
         // GroupPlay:
         System.out.println("");
         System.out.println("------------------------------------------------ GROUP PLAY -----------------------------------------------------");
@@ -183,7 +180,6 @@ public class FootballAplication {
 
 
         System.out.println();
-        */
 
         
     }
