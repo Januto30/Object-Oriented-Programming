@@ -176,7 +176,6 @@ public class FootballAplication {
 
         champions.generateMatches();
         champions.simulateMatches();
-        champions.printMatches();
 
 
         System.out.println();
