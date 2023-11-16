@@ -47,7 +47,6 @@ public class Player {
 
     public void updateStats(Match match) {
         this.numMatches += 1;
-        
     }
 
     /*                          JA NO IMPORTA
