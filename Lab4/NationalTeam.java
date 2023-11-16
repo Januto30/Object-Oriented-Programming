@@ -1,3 +1,4 @@
+package Lab4;
 public class NationalTeam extends Team {
 
     public NationalTeam(String name, Country country, GENDER gender) {

@@ -1,3 +1,4 @@
+package Lab4;
 public class League extends Competition {
 
     public League (boolean clubs, String name, Country country, GENDER gender) {
