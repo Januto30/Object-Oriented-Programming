@@ -21,25 +21,47 @@ public class FootballAplication {
         Outfielder player4 = new Outfielder(false, "Rakitic", 27, croacia);
         Outfielder player5 = new Outfielder(false, "Pique", 28, spain);
         Outfielder player6 = new Outfielder(false, "Iniesta", 31, spain);
-        Goalkeeper player7 = new Goalkeeper(false, "Ter Stegen", 23, germany);
-
-        Outfielder player8 = new Outfielder(false, "Sergio Ramos" , 31, spain);
-        Outfielder player9 = new Outfielder(false, "Cristiano Ronaldo", 32, portugal);
-        Outfielder player10 = new Outfielder(false, "Vinicius", 23, brasil);
-        Outfielder player11 = new Outfielder(false, "Fede Valverde", 25, uruguay);
+        Outfielder player7 = new Outfielder(false, "Xavi", 32, spain);
+        Outfielder player8 = new Outfielder(false, "Mascherano", 30, argentina);
+        Outfielder player9 = new Outfielder(false, "Jordi Alba", 27, spain);
+        Outfielder player10 = new Outfielder(false, "Puyol", 37, spain);
+        Goalkeeper player11 = new Goalkeeper(false, "Ter Stegen", 23, germany);
+        
         Outfielder player12 = new Outfielder(false, "Modric", 32, croacia);
         Outfielder player13 = new Outfielder(false, "Kroos", 27, germany);
-        Goalkeeper player14 = new Goalkeeper(false, "Casillas", 29, spain);
+        Outfielder player14 = new Outfielder(false, "Sergio Ramos" , 31, spain);
+        Outfielder player15 = new Outfielder(false, "Cristiano Ronaldo", 32, portugal);
+        Outfielder player16 = new Outfielder(false, "Vinicius", 23, brasil);
+        Outfielder player17 = new Outfielder(false, "Fede Valverde", 25, uruguay);
+        Outfielder player18 = new Outfielder(false, "Casemiro", 28, brasil);
+        Outfielder player19 = new Outfielder(false, "Rodrygo", 21, brasil);
+        Outfielder player20 = new Outfielder(false, "Arbeloa", 30, spain);
+        Outfielder player21 = new Outfielder(false, "Kovacic", 23, croacia);
+        Goalkeeper player22 = new Goalkeeper(false, "Casillas", 29, spain);
 
-        Outfielder player15 = new Outfielder(false, "Jesus Navas" , 31, spain);
-        Outfielder player16 = new Outfielder(false, "Bade", 32, portugal);
-        Outfielder player17 = new Outfielder(false, "Acuña", 25, argentina);
-        Goalkeeper player18 = new Goalkeeper(false, "Sergio Rico" , 31, spain);
+        Outfielder player23 = new Outfielder(false, "Jesus Navas" , 31, spain);
+        Outfielder player24 = new Outfielder(false, "Bade", 32, portugal);
+        Outfielder player25 = new Outfielder(false, "Acuña", 25, argentina);
+        Outfielder player26 = new Outfielder(false, "Maradona" , 56, argentina);
+        Outfielder player27 = new Outfielder(false, "Ocampos" , 25, argentina);
+        Outfielder player28 = new Outfielder(false, "Gudelj" , 28, croacia);
+        Outfielder player29 = new Outfielder(false, "Fernando" , 33, brasil);
+        Outfielder player30 = new Outfielder(false, "Lamela" , 26, argentina);
+        Outfielder player31 = new Outfielder(false, "Mariano" , 24, brasil);
+        Outfielder player32 = new Outfielder(false, "Suso" , 28, spain);
+        Goalkeeper player33 = new Goalkeeper(false, "Sergio Rico" , 31, spain);
 
-        Outfielder player19 = new Outfielder(false, "Gaya", 32, spain);
-        Outfielder player20 = new Outfielder(false, "Paulista", 23, brasil);
-        Outfielder player21 = new Outfielder(false, "Cavani", 25, uruguay);
-        Goalkeeper player22 = new Goalkeeper(false, "Diego Alves" , 28, brasil);
+        Outfielder player34 = new Outfielder(false, "Gaya", 32, spain);
+        Outfielder player35 = new Outfielder(false, "Pepelu", 22, spain);
+        Outfielder player36 = new Outfielder(false, "Mendes", 25, portugal);
+        Outfielder player37 = new Outfielder(false, "Parejo", 34, spain);
+        Outfielder player38 = new Outfielder(false, "Javi Guerra", 20, spain);
+        Outfielder player39 = new Outfielder(false, "Fran Perez", 21, spain);
+        Outfielder player40 = new Outfielder(false, "Hugo Duro", 24, spain);
+        Outfielder player41 = new Outfielder(false, "Diego Lopez", 21, spain);
+        Outfielder player42 = new Outfielder(false, "Paulista", 23, brasil);
+        Outfielder player43 = new Outfielder(false, "Cavani", 25, uruguay);
+        Goalkeeper player44 = new Goalkeeper(false, "Diego Alves" , 28, brasil);
 
         Outfielder player23 = new Outfielder(true, "Mariona", 32, spain);
         Outfielder player24 = new Outfielder(true, "Alexia", 23, spain);
@@ -72,6 +94,10 @@ public class FootballAplication {
         barcelona.addPlayer(player5);
         barcelona.addPlayer(player6);
         barcelona.addPlayer(player7);
+        barcelona.addPlayer(player8);
+        barcelona.addPlayer(player9);
+        barcelona.addPlayer(player10);
+        barcelona.addPlayer(player11);
 
         realMadrid.addPlayer(player8);
         realMadrid.addPlayer(player9);
