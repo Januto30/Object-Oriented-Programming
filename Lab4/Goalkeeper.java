@@ -9,7 +9,12 @@ public class Goalkeeper extends Player {
 
     @Override
     public void update(Competition c, Match m) {
-        // Escriure...
+        super.update(c, m);
+
+        if (stats.containsKey(c)) {
+            GoalkeeperStats goalkeeperStats = (GoalkeeperStats) stats.get(c);
+            goalkeeperStats.updateStats(m);
+        }
         
     }
     

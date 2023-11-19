@@ -33,11 +33,11 @@ public class Player {
         return country;
     }
 
-    public HashMap<Competition, PlayerStats> getStats(Competition c) {    /// ???????????
+    public HashMap<Competition, PlayerStats> getStats(Competition c) {  // potser que estigui malament
         return stats;
     }
 
-    public boolean equals (Object o) {          /// WTF ?? Que es això? Que he de fer
+    public boolean equals (Object o) {
         if (this == o) {
             return true;
 
@@ -48,13 +48,24 @@ public class Player {
 
         }
 
-        Player player = (Player) o;                 /// ??????????????????
-        return gender == player.gender && age == player.age && numMatches == player.numMatches && name.equals(player.name) && country.equals(player.country);
+        Player player = (Player) o;
+        return gender == player.gender && age == player.age  && name.equals(player.name) && country.equals(player.country);
 
     }
 
     public void update(Competition c, Match m) {
-        // Escriure...
+        if(!stats.containsKey(c)) {
+            if (this instanceof Outfielder) {
+                stats.put(c, new OutfielderStats(this));
+
+            } else if (this instanceof Goalkeeper) {
+                stats.put(c, new GoalkeeperStats(this));
+
+            }
+        }
+
+        PlayerStats playerStats = stats.get(c);
+        playerStats.updateStats(m);
 
     }
 

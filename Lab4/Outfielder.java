@@ -9,7 +9,13 @@ public class Outfielder extends Player {
 
     @Override
     public void update(Competition c, Match m) {
-        // Escriure...
+        super.update(c, m);
+
+        if (stats.containsKey(c)) {
+            OutfielderStats outfielderStats = (OutfielderStats) stats.get(c);
+            outfielderStats.updateStats(m);
+            
+        }
         
     }
 }
