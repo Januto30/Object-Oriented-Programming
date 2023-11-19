@@ -28,7 +28,7 @@ public class Outfielder extends Player {
         this.numPasses += random.nextInt(60);
         this.numShots += random.nextInt(2);
 
-        this.numAssists += random.nextInt(1);           // Es podria fer millor
+        this.numAssists += random.nextInt(1);
 
         for (Player player : match.getHomeTeam().getPlayers()) {
             if (player.getName().equals(super.getName()) && match.getHomeScorers().contains(player)) {
