@@ -63,15 +63,29 @@ public class FootballAplication {
         Outfielder player43 = new Outfielder(false, "Cavani", 25, uruguay);
         Goalkeeper player44 = new Goalkeeper(false, "Diego Alves" , 28, brasil);
 
-        Outfielder player23 = new Outfielder(true, "Mariona", 32, spain);
-        Outfielder player24 = new Outfielder(true, "Alexia", 23, spain);
-        Outfielder player25 = new Outfielder(true, "Aitana", 25, spain);
-        Outfielder player30 = new Outfielder(true, "Engen", 25, norway);
-        Goalkeeper player26 = new Goalkeeper(true, "Cata Coll" , 31, spain);
+        Outfielder player45 = new Outfielder(true, "Mariona", 27, spain);
+        Outfielder player46 = new Outfielder(true, "Alexia", 29, spain);
+        Outfielder player47 = new Outfielder(true, "Aitana", 25, spain);
+        Outfielder player48 = new Outfielder(true, "Maria Leon", 28, spain);
+        Outfielder player49 = new Outfielder(true, "Paredes", 26, spain);
+        Outfielder player50 = new Outfielder(true, "Patri", 24, spain);
+        Outfielder player51 = new Outfielder(true, "Pina", 22, spain);
+        Outfielder player52 = new Outfielder(true, "Graham", 28, norway);
+        Outfielder player53 = new Outfielder(true, "Salma Paralluelo", 20, spain);
+        Outfielder player54 = new Outfielder(true, "Engen", 25, norway);
+        Goalkeeper player55 = new Goalkeeper(true, "Cata Coll" , 22, spain);
 
-        Outfielder player27 = new Outfielder(false, "Cavani", 36, uruguay);
-        Outfielder player28 = new Outfielder(false, "Marcos Rojo", 36, argentina);
-        Goalkeeper player29 = new Goalkeeper(false, "Sergio Romero", 36, argentina);
+        Outfielder player56 = new Outfielder(false, "Cavani", 36, uruguay);
+        Outfielder player57 = new Outfielder(false, "Marcos Rojo", 36, argentina);
+        Outfielder player58 = new Outfielder(false, "Figal", 36, argentina);
+        Outfielder player59 = new Outfielder(false, "Advincula", 36, argentina);
+        Outfielder player60 = new Outfielder(false, "Fabra", 36, argentina);
+        Outfielder player61 = new Outfielder(false, "Barco", 36, argentina);
+        Outfielder player62 = new Outfielder(false, "Medina", 36, argentina);
+        Outfielder player63 = new Outfielder(false, "Langoni", 36, argentina);
+        Outfielder player64 = new Outfielder(false, "Zeballos", 36, argentina);    
+        Outfielder player65 = new Outfielder(false, "Pol Fernandez", 36, argentina);
+        Goalkeeper player66 = new Goalkeeper(false, "Sergio Romero", 36, argentina);
 
 
         // EQUIPS:
@@ -99,49 +113,94 @@ public class FootballAplication {
         barcelona.addPlayer(player10);
         barcelona.addPlayer(player11);
 
-        realMadrid.addPlayer(player8);
-        realMadrid.addPlayer(player9);
-        realMadrid.addPlayer(player10);
-        realMadrid.addPlayer(player11);
         realMadrid.addPlayer(player12);
         realMadrid.addPlayer(player13);
         realMadrid.addPlayer(player14);
+        realMadrid.addPlayer(player15);
+        realMadrid.addPlayer(player16);
+        realMadrid.addPlayer(player17);
+        realMadrid.addPlayer(player18);
+        realMadrid.addPlayer(player19);
+        realMadrid.addPlayer(player20);
+        realMadrid.addPlayer(player21);
+        realMadrid.addPlayer(player22);
 
-        sevilla.addPlayer(player15);
-        sevilla.addPlayer(player16);
-        sevilla.addPlayer(player17);
-        sevilla.addPlayer(player18);
+        sevilla.addPlayer(player23);
+        sevilla.addPlayer(player24);
+        sevilla.addPlayer(player25);
+        sevilla.addPlayer(player26);
+        sevilla.addPlayer(player27);
+        sevilla.addPlayer(player28);
+        sevilla.addPlayer(player29);
+        sevilla.addPlayer(player30);
+        sevilla.addPlayer(player31);
+        sevilla.addPlayer(player32);
+        sevilla.addPlayer(player33);
 
-        valencia.addPlayer(player19);
-        valencia.addPlayer(player20);
-        valencia.addPlayer(player21);
-        valencia.addPlayer(player22);
+        valencia.addPlayer(player34);
+        valencia.addPlayer(player35);
+        valencia.addPlayer(player36);
+        valencia.addPlayer(player37);
+        valencia.addPlayer(player38);
+        valencia.addPlayer(player39);
+        valencia.addPlayer(player40);
+        valencia.addPlayer(player41);
+        valencia.addPlayer(player42);
+        valencia.addPlayer(player43);
+        valencia.addPlayer(player44);
 
         barcelonaFem.addPlayer(player1);    // Ha de sortir malament (genere)
-        barcelonaFem.addPlayer(player23);
-        barcelonaFem.addPlayer(player24);
-        barcelonaFem.addPlayer(player25);
-        barcelonaFem.addPlayer(player26);
-        barcelonaFem.addPlayer(player30);
+        barcelonaFem.addPlayer(player45);
+        barcelonaFem.addPlayer(player46);
+        barcelonaFem.addPlayer(player47);
+        barcelonaFem.addPlayer(player48);
+        barcelonaFem.addPlayer(player49);
+        barcelonaFem.addPlayer(player50);
+        barcelonaFem.addPlayer(player51);
+        barcelonaFem.addPlayer(player52);
+        barcelonaFem.addPlayer(player53);
+        barcelonaFem.addPlayer(player54);
+        barcelonaFem.addPlayer(player55);
 
-        boca.addPlayer(player27);
-        boca.addPlayer(player28);
-        boca.addPlayer(player29);
+        boca.addPlayer(player56);
+        boca.addPlayer(player57);
+        boca.addPlayer(player58);
+        boca.addPlayer(player59);
+        boca.addPlayer(player60);
+        boca.addPlayer(player61);
+        boca.addPlayer(player62);
+        boca.addPlayer(player63);
+        boca.addPlayer(player64);
+        boca.addPlayer(player65);
+        boca.addPlayer(player66);
+
 
         espanya.addPlayer(player1);         // Ha de sortir malament (nacionalitat)
-        espanya.addPlayer(player23);        // ha de sortir malament (genere)
+        espanya.addPlayer(player45);        // ha de sortir malament (genere)
         espanya.addPlayer(player5);
         espanya.addPlayer(player6);
-        espanya.addPlayer(player8);
+        espanya.addPlayer(player7);
+        espanya.addPlayer(player9);
+        espanya.addPlayer(player10);
         espanya.addPlayer(player14);
+        espanya.addPlayer(player20);
+        espanya.addPlayer(player22);
+        espanya.addPlayer(player23);
+        espanya.addPlayer(player32);
+        espanya.addPlayer(player34);
 
-        espanyaFem.addPlayer(player29);     // Ha de sortir malament (nacionalitat)
-        espanyaFem.addPlayer(player8);     // Ha de sortir malament (genere)
-        espanyaFem.addPlayer(player30);     // Ha de sortir malament (nacionalitat)
-        espanyaFem.addPlayer(player23);
-        espanyaFem.addPlayer(player24);
-        espanyaFem.addPlayer(player25);
-        espanyaFem.addPlayer(player26);
+        espanyaFem.addPlayer(player54);     // Ha de sortir malament (nacionalitat)
+        espanyaFem.addPlayer(player5);     // Ha de sortir malament (genere)
+        espanyaFem.addPlayer(player45);
+        espanyaFem.addPlayer(player46);
+        espanyaFem.addPlayer(player47);
+        espanyaFem.addPlayer(player48);
+        espanyaFem.addPlayer(player49);
+        espanyaFem.addPlayer(player50);
+        espanyaFem.addPlayer(player51);
+        espanyaFem.addPlayer(player53);
+        espanyaFem.addPlayer(player55);
+
 
         // COMPETITIONS:
         // Leagues:
