@@ -1,4 +1,5 @@
 package Lab4;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Team {
@@ -6,7 +7,7 @@ public class Team {
     protected Country country;
     public enum GENDER {MALE, FEMALE, MIXED};
     private GENDER gender;
-
+    protected HashMap<Competition, TeamStats> stats;
     private LinkedList<Player> playerList;
 
     public Team(String name, Country country, GENDER gender) {
@@ -14,6 +15,8 @@ public class Team {
         this.country = country;
         this.gender = gender;
         playerList = new LinkedList <Player>();
+        stats =  new HashMap<Competition, TeamStats>();
+
     }
 
     public String getName() {
@@ -32,6 +35,9 @@ public class Team {
         return playerList;
     }
 
+    public HashMap<Competition, TeamStats> getStats(Competition c) {
+        return stats;
+    }
 
     public void addPlayer(Player p) {
         boolean gen_equip;
@@ -76,9 +82,17 @@ public class Team {
         System.out.println("");
     }
 
-
     public void removePlayer(Player p) {
         playerList.remove(p);
+
+    }
+
+    public void update(Competition c, Match m){
+        if(!stats.containsKey(c)) {
+            if(this instanceof Team){
+                stats.put(c, new TeamStats(this));
+            }
+    }
 
     }
 

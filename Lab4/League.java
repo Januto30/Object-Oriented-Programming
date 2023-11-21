@@ -28,8 +28,13 @@ public class League extends Competition {
 
         // Ordenar la llista d'equips segons el número de partitss guanyats de forma descendent usant l'algoritme d'ordenació' de bombolla
         for (int i = 0; i < teamList.size() - 1; i++) {
+
             for (int j = 0; j < teamList.size() - i - 1; j++) {
-                if (teamList.get(j).getNumWins() < teamList.get(j + 1).getNumWins()) {
+                TeamStats teamStats1 = new TeamStats(teamList.get(j));
+                TeamStats teamStats2 = new TeamStats(teamList.get(j+1));
+
+                // Assuming TeamStats has a method getNumWins
+                if (teamStats1.getNumWins() < teamStats2.getNumWins()) {
                     Team temp = teamList.get(j);
                     teamList.set(j, teamList.get(j + 1));
                     teamList.set(j + 1, temp);
@@ -38,8 +43,10 @@ public class League extends Competition {
         }
 
         for (Team team : teamList) {
-            System.out.println(team.getName() + "\t\t" + team.getNumMatches() + "\t\t" + team.getNumWins() +
-                    "\t\t" + team.getNumTies() + "\t\t" + team.getNumLosses());
+            TeamStats teamStats = new TeamStats(team);
+            System.out.println(team.getName() + "\t\t" + teamStats.getNumMatches() + "\t\t" +
+                    teamStats.getNumWins() + "\t\t" + teamStats.getNumTies() + "\t\t" +
+                    teamStats.getNumLosses());
         }
     }
 }

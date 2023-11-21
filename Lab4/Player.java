@@ -53,7 +53,6 @@ public class Player {
 
     }
 
-
     public void update(Competition c, Match m) {
         if(!stats.containsKey(c)) {
             if (this instanceof Outfielder) {
@@ -69,6 +68,5 @@ public class Player {
         playerStats.updateStats(m);
 
     }
-
 
 }

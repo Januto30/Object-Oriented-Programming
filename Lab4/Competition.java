@@ -99,7 +99,7 @@ public class Competition {
             }
         }
     }
-
+    
     public void generateMatches() {
 
     }
@@ -107,10 +107,11 @@ public class Competition {
     public void simulateMatches() {
         for (Match match : matchList) {
             match.simulateMatch();
-            Team homeTeam = match.getHomeTeam();
-            Team awayTeam = match.getAwayTeam();
-            homeTeam.updateStats(match);
-            awayTeam.updateStats(match);
+            TeamStats tsH = new TeamStats(match.getHomeTeam());
+            TeamStats tsA = new TeamStats(match.getAwayTeam());
+    
+            tsH.updateStats(match);
+            tsA.updateStats(match);
         }
     }
 
@@ -122,10 +123,4 @@ public class Competition {
         }
     }
 
-    /*          No importa fer
-     * public void printGoalScorers(int k) {
-     * 
-     * }
-     */
 }
-
