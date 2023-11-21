@@ -68,7 +68,7 @@ public class Cup extends Competition {
             teamsRounds.add(new ArrayList<>(nextRoundTeams));
 
         } else {
-            System.out.println("Final round is empty");
+            System.out.println("La final està buida.");
         }
     }
     
