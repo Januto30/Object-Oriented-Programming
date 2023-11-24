@@ -30,7 +30,6 @@ public class Cup extends Competition {
         teamsRounds.add(new ArrayList<>(shuffleList));
     }
 
-
     @Override
     public void simulateMatches() {
         ArrayList<Team> nextRoundTeams = new ArrayList<>();
@@ -72,9 +71,4 @@ public class Cup extends Competition {
         }
     }
     
-    /*
-    public void printBracket() {
-        
-    }
-    */
 }

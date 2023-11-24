@@ -35,9 +35,10 @@ public class Team {
         return playerList;
     }
 
-    public HashMap<Competition, TeamStats> getStats(Competition c) {
-        return stats;
+    public TeamStats getStats(Competition c) {
+        return stats.get(c);
     }
+    
 
     public void addPlayer(Player p) {
         boolean gen_equip;
@@ -91,7 +92,6 @@ public class Team {
         if(!stats.containsKey(c)) {
             if(this instanceof Team) {
                 stats.put(c, new TeamStats(this));
-
             }
         }
 
