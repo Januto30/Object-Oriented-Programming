@@ -1,4 +1,8 @@
 package Lab4;
+
+import java.util.Collections;
+import java.util.LinkedList;
+
 public class League extends Competition {
 
     public League (boolean clubs, String name, Country country, GENDER gender) {
@@ -21,7 +25,7 @@ public class League extends Competition {
         }
     }
 
-    public void printTable() {
+    public void pritTable() {              // Crec que no ha de ser així sa forma de llistar, s'ha d'utilitzar comprateTo()
         System.out.println(" ");
         System.out.println("Classificació de la lliga:");
         System.out.println("Equip\t\t   Jugats\t Guanyats\t Empatats\t  Perduts");
@@ -49,4 +53,25 @@ public class League extends Competition {
                     teamStats.getNumLosses());
         }
     }
+
+    public void printTable() {
+        System.out.println(" ");
+        System.out.println("Classificació de la lliga:");
+        System.out.println("Equip\t\t   Jugats\t Guanyats\t Empatats\t  Perduts");
+
+        List<TeamStats> teamStatsList = new ArrayList<>();
+
+        for (Team team: teamList) {
+            teamStatsList.add(teamList.)
+        }
+
+        Collections.sort(LinkedList<Team> teamList);
+
+        for (int i = 0; i < teamList.size(); i++) {
+            TeamStats team = teamList.get(i);
+            System
+        }
+
+
+    } 
 }

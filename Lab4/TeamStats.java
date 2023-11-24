@@ -1,6 +1,6 @@
 package Lab4;
 
-public class TeamStats implements Comparable<TeamStats>{
+public class TeamStats implements Comparable<TeamStats> {
     private Team team;
     private int numMatches;
     private int numWins;
@@ -15,8 +15,8 @@ public class TeamStats implements Comparable<TeamStats>{
         
     }
 
-    public void updatePuntos(){
-        puntos= 3*numWins + numTies;
+    public void updatePuntos() {
+        puntos = 3 * numWins + numTies;
     }
 
     public Team getTeam() {
@@ -55,35 +55,42 @@ public class TeamStats implements Comparable<TeamStats>{
     public int compareTo(TeamStats ts) {
         int puntosCompare = Integer.compare(this.puntos, ts.puntos);
 
-        if (puntosCompare == 0){
+        if (puntosCompare == 0) {
             int difGoals = Integer.compare((this.numGoalsScored-this.numGoalsAgainst),(ts.numGoalsScored-ts.numGoalsAgainst));
 
-            if (difGoals == 0){
+            if (difGoals == 0) {
                 int morePoints = Integer.compare(this.numGoalsScored,ts.numGoalsScored);
 
-                if (morePoints == 0){
+                if (morePoints == 0) {
                     return -1;
+
                 } else {
-                    if (morePoints < 0){
+                    if (morePoints < 0) {
                         return -1;
+
                     } else {
                         return +1;
+
                     }
                 }
 
             } else {
-                if (difGoals < 0){
-                return -1;
+                if (difGoals < 0) {
+                    return -1;
+
                 } else {
-                return +1;
+                    return +1;
+
                 }
             }
 
         } else {
-            if (puntosCompare < 0){
+            if (puntosCompare < 0) {
                 return -1;
+
             } else {
                 return +1;
+
             }
         
         }
@@ -159,6 +166,7 @@ public class TeamStats implements Comparable<TeamStats>{
             }
         }
     }
+
     public void printStats() {
         System.out.println("Estadístiques de l'equip " + team.getName() + ":");
         System.out.println("Partits jugats: " + numMatches);

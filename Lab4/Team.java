@@ -87,13 +87,16 @@ public class Team {
 
     }
 
-    public void update(Competition c, Match m){
+    public void update(Competition c, Match m) {
         if(!stats.containsKey(c)) {
-            if(this instanceof Team){
+            if(this instanceof Team) {
                 stats.put(c, new TeamStats(this));
-            }
-    }
 
+            }
+        }
+
+        TeamStats teamStats = stats.get(c);
+        teamStats.updateStats(m);
     }
 
 }

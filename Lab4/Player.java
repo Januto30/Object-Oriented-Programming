@@ -37,23 +37,6 @@ public class Player {
         return stats;
     }
 
-    public boolean equals (Object o) {
-        if (this == o) {
-            return true;
-
-        }
-
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-
-        }
-
-        Player player = (Player) o;
-        return gender == player.gender && age == player.age  && name.equals(player.name) && country.equals(player.country);
-
-    }
-
-
     public void update(Competition c, Match m) {
         if(!stats.containsKey(c)) {
             if (this instanceof Outfielder) {

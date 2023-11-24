@@ -61,7 +61,7 @@ public class Match {
             }
             homeScorers.add(scorer);
 
-            /*  Això encara no importa       // Si en un partit, l'equip Away ha fet 3 gols, tots tres per un mateix jugador, aquest no pot haver fet assistències.
+            /*       // Si en un partit, l'equip Away ha fet 3 gols, tots tres per un mateix jugador, aquest no pot haver fet assistències.
              * Player assistant = homePlayers.get(random.nextInt(homePlayers.size()));
             while (assistant.equals(scorer)) {
                 assistant = homePlayers.get(random.nextInt(homePlayers.size()));
@@ -81,7 +81,7 @@ public class Match {
             }
             awayScorers.add(scorer);
 
-            /*  Això encara no importa
+            /*
             Player assistant = awayPlayers.get(random.nextInt(awayPlayers.size()));
             while (assistant.equals(scorer)) {
                 assistant = awayPlayers.get(random.nextInt(awayPlayers.size()));

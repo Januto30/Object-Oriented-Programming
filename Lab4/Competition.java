@@ -1,5 +1,6 @@
 package Lab4;
 import java.util.LinkedList;
+import java.util.Collections;
 
 public class Competition {
     protected String name;
@@ -121,6 +122,10 @@ public class Competition {
             match.printMatch();
             System.out.println(" ");
         }
+    }
+
+    public void printTopGoalsScorers() {
+
     }
 
 }

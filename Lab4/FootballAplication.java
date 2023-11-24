@@ -11,6 +11,7 @@ public class FootballAplication {
         Country portugal = new Country("Portugal");
         Country germany = new Country("Alemanya");
         Country norway = new Country("Noruega");
+        Country korea = new Country ("Corea");
 
         // JUGADORS:
         System.out.println("");
@@ -87,6 +88,30 @@ public class FootballAplication {
         Outfielder player65 = new Outfielder(false, "Pol Fernandez", 36, argentina);
         Goalkeeper player66 = new Goalkeeper(false, "Sergio Romero", 36, argentina);
 
+        Outfielder player67 = new Outfielder(false, "Muriqi", 30, norway);
+        Outfielder player68 = new Outfielder(false, "Dani Rodriguez", 29, spain);
+        Outfielder player69 = new Outfielder(false, "Jaume Costa", 30, spain);
+        Outfielder player70 = new Outfielder(false, "Kang-in Lee", 24, korea);
+        Outfielder player71 = new Outfielder(false, "Raillo", 28, spain);
+        Outfielder player72 = new Outfielder(false, "Darder", 31, spain);
+        Outfielder player73 = new Outfielder(false, "Abdon Prats", 26, spain);
+        Outfielder player74 = new Outfielder(false, "Maffeo", 24, argentina);
+        Outfielder player75 = new Outfielder(false, "Morlanes", 25, spain);
+        Outfielder player76 = new Outfielder(false, "Lato", 30, spain);
+        Goalkeeper player77 = new Goalkeeper(false, "Rajkovic", 32, croacia);
+
+        Outfielder player78 = new Outfielder(false, "Nico Williams", 21, spain);
+        Outfielder player79 = new Outfielder(false, "Iñaki Williams", 28, spain);
+        Outfielder player80 = new Outfielder(false, "Berenguer", 24, spain);
+        Outfielder player81 = new Outfielder(false, "De Marcos", 30, spain);
+        Outfielder player82 = new Outfielder(false, "Muniain", 33, spain);
+        Outfielder player83 = new Outfielder(false, "Yuri", 30, spain);
+        Outfielder player84 = new Outfielder(false, "Sancet", 26, spain);
+        Outfielder player85 = new Outfielder(false, "Yeray", 30, spain);
+        Outfielder player86 = new Outfielder(false, "Asier Villalibre", 27, spain);
+        Outfielder player87 = new Outfielder(false, "De Galarreta", 28, spain);
+        Goalkeeper player88 = new Goalkeeper(false, "Unai Simón", 24, spain);
+
 
         // EQUIPS:
         System.out.println("");
@@ -97,6 +122,8 @@ public class FootballAplication {
         Team valencia = new Team("Valencia", spain, Team.GENDER.MALE);
         Team barcelonaFem = new Team("Barcelona Femení", spain, Team.GENDER.FEMALE);
         Team boca = new Team("Boca Juniors", argentina, Team.GENDER.MALE);
+        Team mallorca = new Team("Mallorca", spain, Team.GENDER.MALE);
+        Team athletic = new Team("Athletic Club", spain, Team.GENDER.MALE);
 
         NationalTeam espanya = new NationalTeam("Espanya", spain, Team.GENDER.MALE);
         NationalTeam espanyaFem = new NationalTeam("Espanya Femení", spain, Team.GENDER.FEMALE);
@@ -174,6 +201,29 @@ public class FootballAplication {
         boca.addPlayer(player65);
         boca.addPlayer(player66);
 
+        mallorca.addPlayer(player67);
+        mallorca.addPlayer(player68);
+        mallorca.addPlayer(player69);
+        mallorca.addPlayer(player70);
+        mallorca.addPlayer(player71);
+        mallorca.addPlayer(player72);
+        mallorca.addPlayer(player73);
+        mallorca.addPlayer(player74);
+        mallorca.addPlayer(player75);
+        mallorca.addPlayer(player76);
+        mallorca.addPlayer(player77);
+
+        athletic.addPlayer(player79);
+        athletic.addPlayer(player80);
+        athletic.addPlayer(player81);
+        athletic.addPlayer(player82);
+        athletic.addPlayer(player83);
+        athletic.addPlayer(player84);
+        athletic.addPlayer(player85);
+        athletic.addPlayer(player86);
+        athletic.addPlayer(player87);
+        athletic.addPlayer(player88);
+
 
         espanya.addPlayer(player1);         // Ha de sortir malament (nacionalitat)
         espanya.addPlayer(player45);        // ha de sortir malament (genere)
@@ -214,6 +264,8 @@ public class FootballAplication {
         laLiga.addTeam(realMadrid);
         laLiga.addTeam(sevilla);
         laLiga.addTeam(valencia);
+        laLiga.addTeam(mallorca);
+        laLiga.addTeam(athletic);
         laLiga.addTeam(boca);               // Ha de sortir malament (nacionalitat)
         laLiga.addTeam(espanya);             // Ha de sortir malament (no és un club)
 
@@ -228,6 +280,7 @@ public class FootballAplication {
         laLiga.simulateMatches();
         laLiga.printMatches();
         laLiga.printTable();
+        laLiga.printTopGoalsScorers();
 
         // Cup:
         System.out.println("");
@@ -239,6 +292,8 @@ public class FootballAplication {
         kingsCup.addTeam(realMadrid);
         kingsCup.addTeam(sevilla);
         kingsCup.addTeam(valencia);
+        kingsCup.addTeam(mallorca);
+        kingsCup.addTeam(athletic);
         kingsCup.addTeam(barcelonaFem);     // Ha de sortir malament (genere)
         kingsCup.addTeam(espanya);          // Ha de sortir malament (no és un club)
         kingsCup.addTeam(boca);             // Ha de sortir malament (nacionalitat)
