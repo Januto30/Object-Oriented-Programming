@@ -1,5 +1,11 @@
 package Lab4;
+import java.util.LinkedList;
+import java.util.Collections;
+import java.util.HashMap;
+
 public class League extends Competition {
+    private LinkedList<TeamStats> stats = new LinkedList<TeamStats>();
+    
 
     public League (boolean clubs, String name, Country country, GENDER gender) {
         super(false, name, country, gender);
@@ -22,31 +28,23 @@ public class League extends Competition {
     }
 
     public void printTable() {
-        System.out.println(" ");
-        System.out.println("Classificació de la lliga:");
-        System.out.println("Equip\t\t   Jugats\t Guanyats\t Empatats\t  Perduts");
-
-        // Ordenar la llista d'equips segons el número de partitss guanyats de forma descendent usant l'algoritme d'ordenació' de bombolla
-        for (int i = 0; i < teamList.size() - 1; i++) {
-
-            for (int j = 0; j < teamList.size() - i - 1; j++) {
-                TeamStats teamStats1 = new TeamStats(teamList.get(j));
-                TeamStats teamStats2 = new TeamStats(teamList.get(j+1));
-
-                // Assuming TeamStats has a method getNumWins
-                if (teamStats1.getNumWins() < teamStats2.getNumWins()) {
-                    Team temp = teamList.get(j);
-                    teamList.set(j, teamList.get(j + 1));
-                    teamList.set(j + 1, temp);
-                }
-            }
-        }
-
         for (Team team : teamList) {
-            TeamStats teamStats = new TeamStats(team);
-            System.out.println(team.getName() + "\t\t" + teamStats.getNumMatches() + "\t\t" +
-                    teamStats.getNumWins() + "\t\t" + teamStats.getNumTies() + "\t\t" +
+            TeamStats teamStats = team.getStats(this); // Assuming this is the current competition
+            stats.add(teamStats);
+        }
+    
+        Collections.sort(stats);
+    
+        System.out.printf("%-20s%-10s%-10s%-10s%-10s%n", "Team", "Played", "Won", "Drawn", "Lost");
+    
+        for (TeamStats teamStats : stats) {
+            System.out.printf("%-20s%-10d%-10d%-10d%-10d%n",
+                    teamStats.getTeam().getName(),
+                    teamStats.getNumMatches(),
+                    teamStats.getNumWins(),
+                    teamStats.getNumTies(),
                     teamStats.getNumLosses());
         }
     }
+    
 }

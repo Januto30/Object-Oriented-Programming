@@ -159,6 +159,7 @@ public class TeamStats implements Comparable<TeamStats>{
             }
         }
     }
+    
     public void printStats() {
         System.out.println("Estadístiques de l'equip " + team.getName() + ":");
         System.out.println("Partits jugats: " + numMatches);
