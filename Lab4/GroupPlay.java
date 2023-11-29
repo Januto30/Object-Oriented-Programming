@@ -80,7 +80,7 @@ public class GroupPlay extends Competition {
                 int won = teamStats.getNumWins();
                 int drawn = teamStats.getNumTies();
                 int lost = teamStats.getNumLosses();
-                int points = teamStats.getPuntos();
+                int points = teamStats.getPoints();
     
                 System.out.printf("%-20s %-10d %-10d %-10d %-10d %-10d%n",
                         team.getName(), played, won, drawn, lost, points);

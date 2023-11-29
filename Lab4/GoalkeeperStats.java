@@ -14,10 +14,8 @@ public class GoalkeeperStats extends PlayerStats {
     }
 
     @Override
-    public void updateStats(Match match) {
+    public void updateStats(Match match) {      // !!!!!!!!!!!!!1
         Random random = new Random();
-
-        super.updateStats(match);
 
         for (Player player : match.getHomeTeam().getPlayers()) {
             if (player.getName().equals(this.player.getName())) {
@@ -55,7 +53,7 @@ public class GoalkeeperStats extends PlayerStats {
         System.out.println("| Nacionalitat:\t\t" + player.country.getName());
         System.out.println("| Partits jugats:\t" + numMatches);
         System.out.println("| Parades:\t\t" + numSaves);
-        System.out.println("| Gols encaixats:\t\t" + numGoalsLet);
+        System.out.println("| Gols encaixats:\t" + numGoalsLet);
         System.out.println("|_____________________________________________");
         System.out.println("");
         

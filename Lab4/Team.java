@@ -14,9 +14,8 @@ public class Team {
         this.name = name;
         this.country = country;
         this.gender = gender;
-        playerList = new LinkedList <Player>();
-        stats =  new HashMap<Competition, TeamStats>();
-
+        playerList = new LinkedList<>();
+        stats =  new HashMap<>();
     }
 
     public String getName() {
@@ -35,10 +34,15 @@ public class Team {
         return playerList;
     }
 
-    public TeamStats getStats(Competition c) {
-        return stats.get(c);
+    public TeamStats getStats(Competition c) {                      // !!!!!!!!!!!!!!!
+        TeamStats teamStats = stats.get(c);
+        if (teamStats == null) {
+            teamStats = new TeamStats(this);
+            stats.put(c, teamStats);
+            System.err.println("Warning: TeamStats is null for team " + this.name);
+        }
+        return teamStats;
     }
-    
 
     public void addPlayer(Player p) {
         boolean gen_equip;
@@ -53,20 +57,20 @@ public class Team {
         if (this.gender == GENDER.MIXED) {
             playerList.add(p);
             if (p.getGender() == true) {
-                System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip: " + this.name + ".");
+                // System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip: " + this.name + ".");
 
             } else {
-                System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip: " + this.name + ".");
+                // System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip: " + this.name + ".");
 
             }
 
         } else if (gen_equip == p.getGender()) {
             this.playerList.add(p);            
             if (p.getGender() == true) {
-                System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip: " + this.name + ".");
+                //System.out.println("- S'ha assignat la jugador " + p.getName() + " al equip: " + this.name + ".");
 
             } else {
-                System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip: " + this.name + ".");
+                //System.out.println("- S'ha assignat el jugador " + p.getName() + " al equip: " + this.name + ".");
             
             }
             
@@ -78,9 +82,8 @@ public class Team {
                 System.out.println("-> El jugador " + p.getName() +  " no se'l pot assignar per raons de gènere al equip: " + this.name + ".");
             
             }
+            System.out.println("");
         }
-
-        System.out.println("");
     }
 
     public void removePlayer(Player p) {
@@ -88,15 +91,32 @@ public class Team {
 
     }
 
-    public void update(Competition c, Match m) {
-        if(!stats.containsKey(c)) {
-            if(this instanceof Team) {
-                stats.put(c, new TeamStats(this));
-            }
+
+    public void update(Competition c, Match m) {            // !!!!!!!!!!!!!!
+
+        if (!stats.containsKey(c)) {
+            stats.put(c, new TeamStats(this));
+
         }
 
         TeamStats teamStats = stats.get(c);
         teamStats.updateStats(m);
-    }
 
+        for (Player player : playerList) {
+            player.update(c, m);
+
+        }
+        /*
+        if(!stats.containsKey(c)) {
+            if(this instanceof Team) {
+                stats.put(c, new TeamStats(this));
+                for (Player player : playerList) {
+                    player.update(c, m);
+
+                }
+            }
+        }
+        */
+        
+    }
 }

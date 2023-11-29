@@ -33,11 +33,11 @@ public class Player {
         return country;
     }
 
-    public HashMap<Competition, PlayerStats> getStats(Competition c) {  // potser que estigui malament
-        return stats;
+    public PlayerStats getStats(Competition c) {        // potser que estigui malament !!!!!!!1
+        return stats.get(c);
     }
 
-    public void update(Competition c, Match m) {
+    public void update(Competition c, Match m) {        // !!!!!!!!!!!!!!!!!!1
         if(!stats.containsKey(c)) {
             if (this instanceof Outfielder) {
                 stats.put(c, new OutfielderStats(this));

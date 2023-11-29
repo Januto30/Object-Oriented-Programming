@@ -44,7 +44,7 @@ public class Match {
     }
     
 
-    public void simulateMatch() {
+    public void simulateMatch() {           // !!!!!!!!!!!!!!!!!!!!!!1
         Random random = new Random();
         this.homeGoals = random.nextInt(4);
         this.awayGoals = random.nextInt(4);
@@ -95,7 +95,7 @@ public class Match {
     }
 
     public void printMatch() {
-        System.out.println(homeTeam.getName() + " " + homeGoals + "  vs  " + awayTeam.getName() + " " +  awayGoals);
+        System.out.println("[" + homeTeam.getName() + " " + homeGoals + "  vs  " + awayTeam.getName() + " " +  awayGoals + "]");
         
         if (homeGoals == 0) {
             System.out.println("");

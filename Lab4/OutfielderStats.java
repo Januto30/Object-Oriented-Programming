@@ -20,11 +20,9 @@ public class OutfielderStats extends PlayerStats {
     }
 
     @Override
-    public void updateStats(Match match) {
+    public void updateStats(Match match) {      // !!!!!!!!!!!!!!
         Random random = new Random();
         int goalsScored = 0;
-
-        super.updateStats(match);
 
         this.numTackles += random.nextInt(10);
         this.numPasses += random.nextInt(60);
@@ -48,6 +46,7 @@ public class OutfielderStats extends PlayerStats {
         this.numGoals += goalsScored;
         this.numShots = numShots + goalsScored + random.nextInt(3);
 
+        super.updateStats(match);
     }
 
     @Override

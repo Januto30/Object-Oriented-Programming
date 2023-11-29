@@ -8,15 +8,22 @@ public class TeamStats implements Comparable<TeamStats> {
     private int numLosses;
     private int numGoalsScored;
     private int numGoalsAgainst;
-    private int puntos;
+    private int points;
 
     public TeamStats(Team team) {
         this.team = team;
+        this.numMatches = 0;
+        this.numWins = 0;
+        this.numTies = 0;
+        this.numLosses = 0;
+        this.numGoalsScored = 0;
+        this.numGoalsAgainst = 0;
+        this.points = 0;
         
     }
 
-    public void updatePuntos() {
-        puntos = 3 * numWins + numTies;
+    public void updatePoints() {
+        points = 3 * numWins + numTies;
     }
 
     public Team getTeam() {
@@ -47,25 +54,25 @@ public class TeamStats implements Comparable<TeamStats> {
         return numGoalsAgainst;
     }
 
-    public int getPuntos() {
-        return puntos;
+    public int getPoints() {
+        return points;
     }
 
     @Override
     public int compareTo(TeamStats ts) {
-        int puntosCompare = Integer.compare(this.puntos, ts.puntos);
+        int pointsCompare = Integer.compare(this.points, ts.points);
 
-        if (puntosCompare == 0) {
+        if (pointsCompare == 0) {
             int difGoals = Integer.compare((this.numGoalsScored-this.numGoalsAgainst),(ts.numGoalsScored-ts.numGoalsAgainst));
 
             if (difGoals == 0) {
-                int morePoints = Integer.compare(this.numGoalsScored,ts.numGoalsScored);
+                int goalsScoredCompare = Integer.compare(this.numGoalsScored,ts.numGoalsScored);
 
-                if (morePoints == 0) {
-                    return -1;
+                if (goalsScoredCompare == 0) {
+                    return 0;
 
                 } else {
-                    if (morePoints < 0) {
+                    if (goalsScoredCompare < 0) {
                         return -1;
 
                     } else {
@@ -85,7 +92,7 @@ public class TeamStats implements Comparable<TeamStats> {
             }
 
         } else {
-            if (puntosCompare < 0) {
+            if (pointsCompare < 0) {
                 return -1;
 
             } else {
@@ -96,8 +103,9 @@ public class TeamStats implements Comparable<TeamStats> {
         }
     }
 
-    public void updateStats(Match match) {
+    public void updateStats(Match match) {          // !!!!!!!!!!!!!!!!!!!!!!!!1
         this.numMatches++;
+
         if (match.getHomeTeam() == this.team){
             this.numGoalsScored += match.getHomeGoals();
             this.numGoalsAgainst += match.getAwayGoals();
@@ -125,9 +133,11 @@ public class TeamStats implements Comparable<TeamStats> {
                 if (player instanceof Goalkeeper) {
                     GoalkeeperStats goalkeeperStats = new GoalkeeperStats((Goalkeeper) player);
                     goalkeeperStats.updateStats(match);
+
                 } else if (player instanceof Outfielder) {
-                    OutfielderStats fieldPlayerStats = new OutfielderStats((Outfielder) player);
-                    fieldPlayerStats.updateStats(match);
+                    OutfielderStats outfieldPlayerStats = new OutfielderStats((Outfielder) player);
+                    outfieldPlayerStats.updateStats(match);
+
                 }
             }
 
@@ -147,21 +157,24 @@ public class TeamStats implements Comparable<TeamStats> {
 
             }
 
-            for (Player s : team.getPlayers()) {
+            for (Player player : team.getPlayers()) {
                 int goalsScored = 0;
     
                 for (Player scorer : match.getAwayScorers()) {
-                    if (scorer == s) {
+                    if (scorer == player) {
                         goalsScored++;
+
                     }
                 }
     
-                if (s instanceof Goalkeeper) {
-                    GoalkeeperStats goalkeeperStats = new GoalkeeperStats((Goalkeeper) s);
+                if (player instanceof Goalkeeper) {
+                    GoalkeeperStats goalkeeperStats = new GoalkeeperStats((Goalkeeper) player);
                     goalkeeperStats.updateStats(match);
-                } else if (s instanceof Outfielder) {
-                    OutfielderStats fieldPlayerStats = new OutfielderStats((Outfielder) s);
-                    fieldPlayerStats.updateStats(match);
+
+                } else if (player instanceof Outfielder) {
+                    OutfielderStats outfieldPlayerStats = new OutfielderStats((Outfielder) player);
+                    outfieldPlayerStats.updateStats(match);
+
                 }
             }
         }
@@ -170,6 +183,7 @@ public class TeamStats implements Comparable<TeamStats> {
     public void printStats() {
         System.out.println("Estadístiques de l'equip " + team.getName() + ":");
         System.out.println("Partits jugats: " + numMatches);
+        System.out.println("Punts obtinguts: " + points);
         System.out.println("Partits guanyats: " + numWins);
         System.out.println("Partits empatats: " + numTies);
         System.out.println("Partits perduts: " + numLosses);

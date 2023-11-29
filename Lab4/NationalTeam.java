@@ -18,7 +18,6 @@ public class NationalTeam extends Team {
                 System.out.println("-> El jugador " + p.getName() +  " no se'l pot assignar per raons de nacionalitat al equip " + super.getName() + ", perquè és de " + p.country.getName() + ".");
             
             }
-
             System.out.println("");
         }
     }

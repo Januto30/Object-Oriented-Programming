@@ -61,7 +61,7 @@ public class Competition {
         if (team instanceof NationalTeam) {
             for (Team t : teamList) {
                 if (t.getName().equals(team.getName())) {
-                    validTeam = false;                   // Per verificar que 
+                    validTeam = false;
                     break;
                 
                 }
@@ -82,10 +82,9 @@ public class Competition {
 
         }
 
-        System.out.println("");
         if (validTeamGen && validTeamNat && validTeam) {
             teamList.add(team);
-            System.out.println("- S'ha afegit l'equip " + team.getName() + " a la competició " + this.name + ".");
+            //System.out.println("- S'ha afegit l'equip " + team.getName() + " a la competició " + this.name + ".");
         
         } else {
             if (!validTeamGen) {
@@ -98,6 +97,7 @@ public class Competition {
                 System.out.println("-> L'equip " + team.getName() + " no pot ser afegit a la competició " + this.name + ".");
 
             }
+            System.out.println("");
         }
     }
     
@@ -105,14 +105,19 @@ public class Competition {
 
     }
 
-    public void simulateMatches() {
+    public void simulateMatches() {             // !!!!!!!!!!!!!!!!!!!!!!
         for (Match match : matchList) {
             match.simulateMatch();
-            TeamStats tsH = new TeamStats(match.getHomeTeam());
-            TeamStats tsA = new TeamStats(match.getAwayTeam());
-    
-            tsH.updateStats(match);
-            tsA.updateStats(match);
+            TeamStats tsH = match.getHomeTeam().getStats(this);
+            TeamStats tsA = match.getAwayTeam().getStats(this);
+
+            if (tsH != null && tsA != null) {
+                tsH.updateStats(match);
+                tsA.updateStats(match);
+
+            } else {
+                System.out.println("Ojo: TeamStats es null per un equip");
+            }
         }
     }
 
@@ -124,7 +129,7 @@ public class Competition {
         }
     }
 
-    public void printTopGoalsScorers() {
+    public void printTopGoalsScorers() {    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     }
 
