@@ -94,12 +94,12 @@ public class Team {
 
     public void update(Competition c, Match m) {            // !!!!!!!!!!!!!!
 
-        if (!stats.containsKey(c)) {
+        TeamStats teamStats = stats.get(c);
+        if (teamStats == null) {
             stats.put(c, new TeamStats(this));
 
         }
 
-        TeamStats teamStats = stats.get(c);
         teamStats.updateStats(m);
 
         for (Player player : playerList) {

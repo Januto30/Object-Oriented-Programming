@@ -3,6 +3,8 @@ package Lab4;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
 
 public class League extends Competition {
 
@@ -30,15 +32,25 @@ public class League extends Competition {
 
     public void printTable() {      // !!!!!!!!!!!!!!!!!!!
 
-        Collections.sort(stats);
+        List<TeamStats> leagueTable = new ArrayList<TeamStats>();
+
+        for (Team team : teamList) {
+            TeamStats stats = team.getStats(this);
+            if (stats != null) {
+                leagueTable.add(stats);
+
+            }
+        }
+
+        Collections.sort(leagueTable, Collections.reverseOrder());
 
         System.out.println(" ");
-        System.out.println("Classificació de la lliga:");
+        System.out.println("Classificació de: " + this.name);
         System.out.println("Equip \t\t\t    Punts\t   Jugats\t Guanyats\t Empatats\t  Perduts");
 
-        for (TeamStats teamStats : stats) {
-            if (teamStats != null) {
-                System.out.println(teamStats.getTeam() + "\t\t" + teamStats.getPoints() + "\t\t" + teamStats.getNumMatches() + "\t\t" + teamStats.getNumWins() + "\t\t" + teamStats.getNumTies() + "\t\t" + teamStats.getNumLosses());
+        for (TeamStats stats : leagueTable) {
+            if (stats != null) {
+                System.out.println(stats.getTeam() + "\t\t" + stats.getPoints() + "\t\t" + stats.getNumMatches() + "\t\t" + stats.getNumWins() + "\t\t" + stats.getNumTies() + "\t\t" + stats.getNumLosses());
             
             } else {
                 System.out.println("Una estadistica de Team es null !!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
