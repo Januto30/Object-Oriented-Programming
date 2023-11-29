@@ -11,8 +11,10 @@ public class Outfielder extends Player {
     public void update(Competition c, Match m) {
         super.update(c, m);
 
-        if (stats.containsKey(c)) {
-            OutfielderStats outfielderStats = (OutfielderStats) stats.get(c);
+        PlayerStats playerStats = stats.get(c);
+
+        if (playerStats instanceof OutfielderStats) {
+            OutfielderStats outfielderStats = (OutfielderStats) playerStats;
             outfielderStats.updateStats(m);
             
         }

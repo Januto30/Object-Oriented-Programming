@@ -44,7 +44,7 @@ public class Match {
     }
     
 
-    public void simulateMatch() {           // !!!!!!!!!!!!!!!!!!!!!!1
+    public void simulateMatch() {
         Random random = new Random();
         this.homeGoals = random.nextInt(4);
         this.awayGoals = random.nextInt(4);
@@ -59,17 +59,7 @@ public class Match {
                 scorer = homePlayers.get(random.nextInt(homePlayers.size()));
             
             }
-            homeScorers.add(scorer);
-
-            /*       // Si en un partit, l'equip Away ha fet 3 gols, tots tres per un mateix jugador, aquest no pot haver fet assistències.
-             * Player assistant = homePlayers.get(random.nextInt(homePlayers.size()));
-            while (assistant.equals(scorer)) {
-                assistant = homePlayers.get(random.nextInt(homePlayers.size()));
-
-            }
-            homeAssists.add(assistant);
-            */
-            
+            homeScorers.add(scorer);  
         }
 
         for (int i = 0; i < awayGoals; i++) {
@@ -80,16 +70,6 @@ public class Match {
             
             }
             awayScorers.add(scorer);
-
-            /*
-            Player assistant = awayPlayers.get(random.nextInt(awayPlayers.size()));
-            while (assistant.equals(scorer)) {
-                assistant = awayPlayers.get(random.nextInt(awayPlayers.size()));
-
-            }
-            awayAssists.add(assistant);
-            */
-
         }
 
     }

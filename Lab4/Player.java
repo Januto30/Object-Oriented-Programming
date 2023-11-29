@@ -14,7 +14,7 @@ public class Player {
         this.name = name;
         this.age = age;
         this.country = nac;
-        stats = new HashMap<Competition, PlayerStats>();
+        stats = new HashMap<>();
     }
 
     public boolean getGender() {
@@ -33,24 +33,31 @@ public class Player {
         return country;
     }
 
-    public PlayerStats getStats(Competition c) {        // potser que estigui malament !!!!!!!1
+    public PlayerStats getStats(Competition c) {
         return stats.get(c);
     }
 
-    public void update(Competition c, Match m) {        // !!!!!!!!!!!!!!!!!!1
+    public void update(Competition c, Match m) {
+        PlayerStats playerStats = null;
+
         if(!stats.containsKey(c)) {
             if (this instanceof Outfielder) {
-                stats.put(c, new OutfielderStats(this));
+                playerStats = new OutfielderStats(this);
 
             } else if (this instanceof Goalkeeper) {
-                stats.put(c, new GoalkeeperStats(this));
+                playerStats = new GoalkeeperStats(this);
 
+            } else {
+                System.out.println("El player no es ni Outfielder ni Goalkeeper");
             }
+
+            stats.put(c, playerStats);
         }
 
-        PlayerStats playerStats = stats.get(c);
-        playerStats.updateStats(m);
+        if (playerStats != null) {
+            playerStats.updateStats(m);
 
+        }
     }
 
 }

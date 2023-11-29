@@ -112,8 +112,6 @@ public class FootballAplication {
         Outfielder player87 = new Outfielder(false, "De Galarreta", 28, spain);
         Goalkeeper player88 = new Goalkeeper(false, "Unai Simón", 24, spain);
 
-        OutfielderStats statsOutfielderPlayer2 = new OutfielderStats(player2);
-        GoalkeeperStats statsGoalkeeperPlayer11 = new GoalkeeperStats(player11);
 
         // EQUIPS:
         System.out.println("");
@@ -130,7 +128,6 @@ public class FootballAplication {
         NationalTeam espanya = new NationalTeam("Espanya", spain, Team.GENDER.MALE);
         NationalTeam espanyaFem = new NationalTeam("Espanya Femení", spain, Team.GENDER.FEMALE);
 
-        TeamStats statsBarcelona = new TeamStats(barcelona);
 
         barcelona.addPlayer(player1);
         barcelona.addPlayer(player2);
@@ -286,12 +283,9 @@ public class FootballAplication {
         laLiga.simulateMatches();
         laLiga.printMatches();
 
-        statsOutfielderPlayer2.printStats();
-        statsGoalkeeperPlayer11.printStats();
-        statsBarcelona.printStats();
-
         laLiga.printTable();
-        laLiga.printTopGoalsScorers();
+        laLiga.printGoalsScorers();
+        
 
         // Cup:
         System.out.println("");
@@ -328,7 +322,6 @@ public class FootballAplication {
 
         champions.generateMatches();
         champions.simulateMatches();
-
 
         System.out.println("Acabat");
 

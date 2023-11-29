@@ -2,9 +2,6 @@ package Lab4;
 
 import java.util.Collections;
 import java.util.LinkedList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
 
 public class League extends Competition {
 
@@ -29,38 +26,7 @@ public class League extends Competition {
             }
         }
     }
-
-    public void printTable() {      // !!!!!!!!!!!!!!!!!!!
-
-        List<TeamStats> leagueTable = new ArrayList<TeamStats>();
-
-        for (Team team : teamList) {
-            TeamStats stats = team.getStats(this);
-            if (stats != null) {
-                leagueTable.add(stats);
-
-            }
-        }
-
-        Collections.sort(leagueTable, Collections.reverseOrder());
-
-        System.out.println(" ");
-        System.out.println("Classificació de: " + this.name);
-        System.out.println("Equip \t\t\t    Punts\t   Jugats\t Guanyats\t Empatats\t  Perduts");
-
-        for (TeamStats stats : leagueTable) {
-            if (stats != null) {
-                System.out.println(stats.getTeam() + "\t\t" + stats.getPoints() + "\t\t" + stats.getNumMatches() + "\t\t" + stats.getNumWins() + "\t\t" + stats.getNumTies() + "\t\t" + stats.getNumLosses());
-            
-            } else {
-                System.out.println("Una estadistica de Team es null !!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            
-            }
-        }
-    }
-}
-
-    /*
+    
     public void printTable() {
         for (Team team : teamList) {
             TeamStats teamStats = team.getStats(this);
@@ -68,41 +34,23 @@ public class League extends Competition {
                 stats.add(teamStats);
 
             } else {
-                System.out.println("Una estadistica de Team es null!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11");
+                System.out.println("Una estadistica de Team es null");
             }
         }
 
-        Collections.sort(stats);
+        for (TeamStats teamStats : stats) {
+            teamStats.updatePoints();
+
+        }
+
+        Collections.sort(stats, Collections.reverseOrder());
 
         System.out.println(" ");
-        System.out.println("Classificació de la lliga:");
-        System.out.println("Equip \t\t\t    Punts\t   Jugats\t Guanyats\t Empatats\t  Perduts");
+        System.out.println("Classificació de " + this.name + ":");
+        System.out.println("Equip\t\t\tPTS\t PJ\t PG\t PE\t PP\t GF\t GC\t DG");
 
         for (TeamStats teamStats : stats) {
-            System.out.println(teamStats.getTeam() + "\t\t" + teamStats.getPoints() + "\t\t" + teamStats.getNumMatches() + "\t\t" + teamStats.getNumWins() + "\t\t" + teamStats.getNumTies() + "\t\t" + teamStats.getNumLosses());
-        
+            teamStats.printStats();        
         }
     }
 }
-    public void printttable() {
-        System.out.println(" ");
-        System.out.println("Classificació de la lliga:");
-        System.out.println("Equip\t\t   Jugats\t Guanyats\t Empatats\t  Perduts");
-
-        List<TeamStats> teamStatsList = new ArrayList<>();
-
-        for (Team team: teamList) {
-            teamStatsList.add(teamList)
-        }
-
-        Collections.sort(LinkedList<Team> teamList);
-
-        for (int i = 0; i < teamList.size(); i++) {
-            TeamStats team = teamList.get(i);
-            System
-        }
-
-
-    } 
-}
-*/

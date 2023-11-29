@@ -13,8 +13,16 @@ public class GoalkeeperStats extends PlayerStats {
 
     }
 
+    public int getNumSaves() {
+        return numSaves;
+    }
+
+    public int getNumGoalsLet() {
+        return numGoalsLet;
+    }
+
     @Override
-    public void updateStats(Match match) {      // !!!!!!!!!!!!!1
+    public void updateStats(Match match) {
         Random random = new Random();
 
         for (Player player : match.getHomeTeam().getPlayers()) {
@@ -52,8 +60,8 @@ public class GoalkeeperStats extends PlayerStats {
         System.out.println("| Edat:\t\t\t" + player.age);
         System.out.println("| Nacionalitat:\t\t" + player.country.getName());
         System.out.println("| Partits jugats:\t" + numMatches);
-        System.out.println("| Parades:\t\t" + numSaves);
-        System.out.println("| Gols encaixats:\t" + numGoalsLet);
+        System.out.println("| Parades:\t\t" + getNumSaves());
+        System.out.println("| Gols encaixats:\t" + getNumGoalsLet());
         System.out.println("|_____________________________________________");
         System.out.println("");
         
@@ -65,7 +73,14 @@ public class GoalkeeperStats extends PlayerStats {
             GoalkeeperStats gs = (GoalkeeperStats) ps;
             int goalsLetCompare = Integer.compare(gs.numGoalsLet, this.numGoalsLet);
 
-            return (goalsLetCompare != 0) ? goalsLetCompare : Integer.compare(this.numSaves, gs.numSaves);
+            if (goalsLetCompare != 0) {
+                return goalsLetCompare;
+
+            }
+
+            int savesCompare = Integer.compare(this.numSaves, gs.numSaves);
+            
+            return savesCompare;
 
         }
         

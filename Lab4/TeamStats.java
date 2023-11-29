@@ -60,50 +60,33 @@ public class TeamStats implements Comparable<TeamStats> {
 
     @Override
     public int compareTo(TeamStats ts) {
-        int pointsCompare = Integer.compare(this.points, ts.points);
+        int pointsCompare = Integer.compare(this.getPoints(), ts.getPoints());
 
-        if (pointsCompare == 0) {
-            int difGoals = Integer.compare((this.numGoalsScored-this.numGoalsAgainst),(ts.numGoalsScored-ts.numGoalsAgainst));
-
-            if (difGoals == 0) {
-                int goalsScoredCompare = Integer.compare(this.numGoalsScored,ts.numGoalsScored);
-
-                if (goalsScoredCompare == 0) {
-                    return 0;
-
-                } else {
-                    if (goalsScoredCompare < 0) {
-                        return -1;
-
-                    } else {
-                        return +1;
-
-                    }
-                }
-
-            } else {
-                if (difGoals < 0) {
-                    return -1;
-
-                } else {
-                    return +1;
-
-                }
-            }
-
-        } else {
+        if (pointsCompare != 0) {
             if (pointsCompare < 0) {
                 return -1;
 
-            } else {
-                return +1;
-
-            }
-        
+            } else return 1;
         }
+
+        int difGoalsCompare = Integer.compare(this.getNumGoalsScored() - this.getNumGoalsAgainst(), ts.getNumGoalsScored() - ts.getNumGoalsAgainst());
+
+        if (difGoalsCompare != 0) {
+            if (difGoalsCompare < 0) {
+                return -1;
+
+            } else return 1;
+        }
+
+        int goalsCompare = Integer.compare(this.getNumGoalsScored(), ts.getNumGoalsScored());
+
+        if (goalsCompare < 0) {
+            return -1;
+
+        } else return 1;
     }
 
-    public void updateStats(Match match) {          // !!!!!!!!!!!!!!!!!!!!!!!!1
+    public void updateTeamStats(Match match) {
         this.numMatches++;
 
         if (match.getHomeTeam() == this.team){
@@ -181,14 +164,8 @@ public class TeamStats implements Comparable<TeamStats> {
     }
     
     public void printStats() {
-        System.out.println("Estadístiques de l'equip " + team.getName() + ":");
-        System.out.println("Partits jugats: " + numMatches);
-        System.out.println("Punts obtinguts: " + points);
-        System.out.println("Partits guanyats: " + numWins);
-        System.out.println("Partits empatats: " + numTies);
-        System.out.println("Partits perduts: " + numLosses);
-        System.out.println("Gols a favor: " + numGoalsScored);
-        System.out.println("Gols en contra: " + numGoalsAgainst);
+        System.out.println(getTeam().getName() + "\t\t " + getPoints() + "\t " + getNumMatches() + "\t  " + getNumWins() + "\t  " + getNumTies() + "\t  " + getNumLosses() + "\t " + getNumGoalsScored() + "\t " + getNumGoalsAgainst() + "\t " + (getNumGoalsScored() - getNumGoalsAgainst()));
+    
     }
 
 }

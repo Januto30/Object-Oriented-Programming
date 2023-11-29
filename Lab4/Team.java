@@ -34,13 +34,15 @@ public class Team {
         return playerList;
     }
 
-    public TeamStats getStats(Competition c) {                      // !!!!!!!!!!!!!!!
+    public TeamStats getStats(Competition c) {
         TeamStats teamStats = stats.get(c);
+
         if (teamStats == null) {
             teamStats = new TeamStats(this);
             stats.put(c, teamStats);
-            System.err.println("Warning: TeamStats is null for team " + this.name);
+
         }
+
         return teamStats;
     }
 
@@ -92,31 +94,19 @@ public class Team {
     }
 
 
-    public void update(Competition c, Match m) {            // !!!!!!!!!!!!!!
-
+    public void update(Competition c, Match m) {
         TeamStats teamStats = stats.get(c);
+
         if (teamStats == null) {
             stats.put(c, new TeamStats(this));
 
         }
 
-        teamStats.updateStats(m);
+        teamStats.updateTeamStats(m);
 
         for (Player player : playerList) {
             player.update(c, m);
 
         }
-        /*
-        if(!stats.containsKey(c)) {
-            if(this instanceof Team) {
-                stats.put(c, new TeamStats(this));
-                for (Player player : playerList) {
-                    player.update(c, m);
-
-                }
-            }
-        }
-        */
-        
     }
 }

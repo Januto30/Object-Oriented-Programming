@@ -9,6 +9,11 @@ public abstract class PlayerStats implements Comparable<PlayerStats> {
 
     }
 
+    public Player getPlayer() {
+        return player;
+        
+    }
+
     public void updateStats(Match match) {
         this.numMatches += 1;
         

@@ -68,7 +68,7 @@ public class Cup extends Competition {
 
         } else {
             System.out.println("La final està buida.");
+
         }
     }
-    
 }

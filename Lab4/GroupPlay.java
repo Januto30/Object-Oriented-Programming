@@ -59,34 +59,8 @@ public class GroupPlay extends Competition {
             TeamStats tsH = new TeamStats(match.getHomeTeam());
             TeamStats tsA = new TeamStats(match.getAwayTeam());
     
-            tsH.updateStats(match);
-            tsA.updateStats(match);
-        }
-    }
-    
-    public void printTables() {
-        System.out.println("Tables for Group Play:");
-    
-        for (League league : listLeagues) {
-            System.out.println("League: " + league.getName());
-            System.out.println("===================================");
-    
-            System.out.printf("%-20s %-10s %-10s %-10s %-10s %-10s%n",
-                    "Team", "Played", "Won", "Drawn", "Lost", "Points");
-    
-            for (Team team : teamList) {
-                TeamStats teamStats = new TeamStats(team);
-                int played = teamStats.getNumMatches();
-                int won = teamStats.getNumWins();
-                int drawn = teamStats.getNumTies();
-                int lost = teamStats.getNumLosses();
-                int points = teamStats.getPoints();
-    
-                System.out.printf("%-20s %-10d %-10d %-10d %-10d %-10d%n",
-                        team.getName(), played, won, drawn, lost, points);
-            }
-    
-            System.out.println("===================================");
+            tsH.updateTeamStats(match);
+            tsA.updateTeamStats(match);
         }
     }
 }
