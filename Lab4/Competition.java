@@ -117,7 +117,7 @@ public class Competition {
                         OutfielderStats outStats = (OutfielderStats) playerStats;
                         outfielderStatsList.add(outStats);
 
-                        // playerStats.printStats();    Per imprimir per pantalla les estadístiques de tots els Outfielders
+                        //playerStats.printStats();    //Per imprimir per pantalla les estadístiques de tots els Outfielders
 
                     }
                 }
