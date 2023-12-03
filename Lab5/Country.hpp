@@ -1,4 +1,3 @@
-
 #ifndef _COUNTRY_
 #define _COUNTRY_
 
@@ -25,4 +24,3 @@ public:
 };
 
 #endif
-

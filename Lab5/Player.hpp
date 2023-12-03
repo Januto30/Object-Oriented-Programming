@@ -2,7 +2,8 @@
 #define _PLAYER_
 
 #include "Country.hpp"
-#include "Match.hpp"
+//#include "Match.hpp"
+class Match;
 
 class Player {
 

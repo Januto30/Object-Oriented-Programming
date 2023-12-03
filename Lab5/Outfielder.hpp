@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <vector>
-#include <cstdlib> // For rand()
+#include <cstdlib>
 #include "Player.hpp"
 #include "Country.hpp"
 #include "Match.hpp"
