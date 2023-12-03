@@ -10,11 +10,11 @@ protected:
     bool female;
     std::string name;
     int age;
-    Country * country;
+    Country *country;
     int numMatches;
     
 public:
-    Player(bool f, std::string n, int a, Country * nat) {
+    Player(bool f, std::string n, int a, Country *nat) {
         female = f;
         name = n;
         country = nat;

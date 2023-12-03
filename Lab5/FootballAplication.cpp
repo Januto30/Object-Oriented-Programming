@@ -1,9 +1,4 @@
 #include <iostream>
-#include "Country.hpp"
-#include "Player.hpp"
-#include "Team.hpp"
-#include "Match.hpp"
-#include "Player.hpp"
 #include "Outfielder.hpp"
 #include "Goalkeeper.hpp"
 
