@@ -15,8 +15,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/pauno/OneDrive - estudiant.upf.edu/Documents/2n UNI/1r Trimestre/Programació Orientada a Objectes/Pràctica/Practica1/UPF-POO23-G203-03/Lab5",
-      "program": "c:/Users/pauno/OneDrive - estudiant.upf.edu/Documents/2n UNI/1r Trimestre/Programació Orientada a Objectes/Pràctica/Practica1/UPF-POO23-G203-03/Lab5/build/Debug/outDebug",
+      "cwd": "c:/Users/janpr/Desktop",
+      "program": "c:/Users/janpr/Desktop/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
