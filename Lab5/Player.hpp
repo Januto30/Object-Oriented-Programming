@@ -2,7 +2,7 @@
 #define _PLAYER_
 
 #include "Country.hpp"
-class Match;
+#include "Match.hpp"
 
 class Player {
 
@@ -14,10 +14,10 @@ protected:
     int numMatches;
     
 public:
-    Player(bool f, std::string n, int a, Country * nac) {
+    Player(bool f, std::string n, int a, Country * nat) {
         female = f;
         name = n;
-        country = nac;
+        country = nat;
 
     }
 
@@ -36,7 +36,7 @@ public:
 
     }
 
-    Country * getNationality() {
+    Country *getNationality() {
         return country;
 
     }
@@ -46,10 +46,10 @@ public:
 
     }
     
-    virtual void updateStats(Match * m) = 0;
+    virtual void updateStats(Match *m) = 0;
 
     virtual void printStats() = 0;
 
 };
 
-#endif _PLAYER_
+#endif

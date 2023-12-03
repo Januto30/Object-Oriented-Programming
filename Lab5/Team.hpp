@@ -14,13 +14,13 @@ public:
 private:
 
 	std::string name;
-    Country * country;
+    Country *country;
     Gender gender;
     std::list<Player *> players;
 	
 public:
 
-	Team(std::string n, Country * c, Gender g) {
+	Team(std::string n, Country *c, Gender g) {
 		name = n;
 		country = c;
 		gender = g;
@@ -42,13 +42,12 @@ public:
         return players;
     }
 
-    void addPlayer(Player * p) {
-        if ((gender == Gender::MALE && !p->isFemale()) ||
-            (gender == Gender::FEMALE && p->isFemale()) ||
+    void addPlayer(Player *p) {
+        if ((gender == Gender::MALE && !p -> isFemale()) ||
+            (gender == Gender::FEMALE && p -> isFemale()) ||
             gender == Gender::MIXED)
             players.push_back(p);
     }
-    
 };
 
 #endif

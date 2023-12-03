@@ -7,18 +7,17 @@
 class Match {
 
 private:
-
-    Team * teamOne;
-    Team * teamTwo;
+    Team *teamOne;
+    Team *teamTwo;
     int goalOne;
     int goalTwo;
     std::list<Player *> scorersOne;
     std::list<Player *> scorersTwo;
 
-    void simulateScorers(Team * t, std::list<Player *> & l, int g) {
+    void simulateScorers(Team *t, std::list<Player *> &l, int g) {
         for (int i = 0; i < g; ++i) {
-            int ix = rand() % t->getPlayers().size();
-            std::list<Player *>::iterator it = t->getPlayers().begin();
+            int ix = rand() % t -> getPlayers().size();
+            std::list<Player *>::iterator it = t -> getPlayers().begin();
             std::advance(it, ix);
             l.push_back(*it);
         }
@@ -26,16 +25,16 @@ private:
 	
 public:
 
-	Match(Team * o, Team * t) {
+	Match(Team *o, Team *t) {
 		teamOne = o;
 		teamTwo = t;
 	}
 	
-	Team * getTeamOne() {
+	Team *getTeamOne() {
         return teamOne;
     }
 
-    Team * getTeamTwo() {
+    Team *getTeamTwo() {
         return teamTwo;
     }
 
@@ -47,11 +46,11 @@ public:
         return goalTwo;
     }
 
-    std::list<Player *> & getScorersOne() {
+    std::list<Player *> &getScorersOne() {
         return scorersOne;
     }
 
-    std::list<Player *> & getScorersTwo() {
+    std::list<Player *> &getScorersTwo() {
         return scorersTwo;
     }
 
@@ -60,10 +59,11 @@ public:
         goalTwo = rand() % 6;
         simulateScorers(teamOne, scorersOne, goalOne);
         simulateScorers(teamTwo, scorersTwo, goalTwo);
+
     }
 
     void printMatch() {
-        std::cout << teamOne->getName() + "-" + teamTwo->getName() + ": ";
+        std::cout << teamOne -> getName() + "-" + teamTwo -> getName() + ": ";
         std::cout << goalOne << "-" << goalTwo << "\n";
     }
     
