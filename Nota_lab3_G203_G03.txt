@@ -1,0 +1,28 @@
+Rúbrica de puntuación
+1) Implementación de la clase NationalTeam con el método addPlayer correcto: 1pt
+2) Implementación de la clase CupMatch con el método para simular los partidos de la copa: 1pt
+3) Implementación de la clase Goalkeeper y Outfielder con los métodos de las estadísticas: 1pt
+4) Modificació de las clases Competition y liga correctamente: 1pt
+5) Implementación la clase Cup y simular una competición de copa : 2pt
+6) Implementación la clase GroupPlay correctamente: 1pt
+7) Implementación del main y verificación del funcionamiento de todos los métodos de cada clase: 2pt
+-------------------
+Total code: 9pt
+8) Documentation 1pt
+
+Puntuación
+1)-> 1    
+2)-> 1
+3)-> 1
+4)-> 1 
+5)-> 2
+6)-> 1
+7)-> 1,5
+8)-> 1      
+
+Nota final 9,5
+
+Observaciones:
+Documentación correcta.
+Falta mostrar la información de la copa y el groupPlay.
+

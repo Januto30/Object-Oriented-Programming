@@ -1,0 +1,23 @@
+Rúbrica de puntuación
+1) Implementación de la clase TeamStats y overriding "CompareTo": 2pt
+2) Implementación del método para ordenar y para imprimir las estadísticas en League: 2pt
+3) Implementación de las clases PlayerStats/OutfieldersStats y overriding "CompareTo": 2pt
+4) Implementación del metodo para ordenar e imprimir los goles en Competition: 2pt
+5) Implementación del main y verificación del funcionamiento de las estadísitcas de la liga
+y de la lista de goleadores: 1pt
+-------------------
+Total code: 9pt
+6) Documentation 1pt
+
+Puntuación
+1)-> 2 
+2)-> 2
+3)-> 2 
+4)-> 2
+5)-> 1
+6)-> 0,7 
+
+Nota final 9,7
+
+Observaciones
+Documentación falta detallar mejor cada una de las clases creadas.
