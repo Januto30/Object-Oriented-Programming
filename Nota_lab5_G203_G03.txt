@@ -1,0 +1,30 @@
+Rúbrica de puntuación
+1) Implementación de la clase Player incluyendo los métodos abstractos: 2pt
+2) Implementación de la clase Outfielder, herencia de player e implementación de los métodos abstractos: 2pt
+3) Implementación de la clase Goalkeeper, herencia de player e implementación de los métodos abstractos:  2pt
+4) Implementación del main y verificación del funcionamiento de todos los métodos de cada clase: 3pt
+-------------------
+Total code: 9pt
+5) Documentation 1pt
+
+Puntuación
+1)-> 2         
+2)-> 2
+3)-> 2
+4)-> 2
+5)-> 0,8     
+
+Nota final 8,8 * 0,4 = 3,52
+
+Observaciones
+Documentación correcta, pero falto detallar un poco más las clases implementadas.
+El programa principal debería mostrar todas las estadísticas de cada uno de
+los jugadores de todos los equipos.
+El programa no compila, marca error al ejecutar
+C:\Users\pcarbajo\AppData\Local\Temp\ccKtsgTC.o: In function `ZN10Outfielder11updateStatsEP5Match':        
+c:/Dades/POO/UPF-POO23-G203-03/Lab5/Outfielder.hpp:23: undefined reference to `Player::updateStats(Match*)'
+C:\Users\pcarbajo\AppData\Local\Temp\ccKtsgTC.o: In function `ZN10Goalkeeper11updateStatsEP5Match':        
+c:/Dades/POO/UPF-POO23-G203-03/Lab5/Goalkeeper.hpp:17: undefined reference to `Player::updateStats(Match*)'       
+collect2.exe: error: ld returned 1 exit status
+
+
